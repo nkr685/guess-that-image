@@ -4,7 +4,7 @@ import ImageComponent from './components/ImageComponent.js'; // Import the Image
 const App = () => {
   return (
     <div>
-      <h1>Guess That Image</h1>
+      <h1>CS490 Guess That Image</h1>
       <ImageComponent /> {/* Include the ImageComponent */}
     </div>
   );
