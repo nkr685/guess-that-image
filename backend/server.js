@@ -1,26 +1,29 @@
-const express = require('express');
-const MongoClient = require('mongodb').MongoClient;
+require('dotenv').config() // calls .env file 
+const express = require('express')
+const mongoose = require('mongoose')
+const imageUrlRoutes = require('./routes/imageUrls.js')
+const userRoutes = require('./routes/users.js')
 
-const app = express();
-const port = 3001;
+// starts express and uses json format
+const app = express()
+app.use(express.json())
 
-const url = 'mongodb://localhost:27017'; //REPLACE THIS WITH THE CONNECTION URL OF UR MONGODB
-const dbName = 'myDatabase'; // REPLACE THIS WITH DB NAME
+//grabs all routes and attaches it to express
+app.use('/ImageUrls', imageUrlRoutes)
+app.use('/Users', userRoutes) 
 
-MongoClient.connect(url, { useNewUrlParser: true, useUnifiedTopology: true }, (err, client) => {
-  if (err) throw err;
 
-  const db = client.db(dbName);
-  
-  //ROUTE FOR GETTING IMAGE
-  app.get('/image', (req, res) => {
-    db.collection('images').findOne({}, (err, result) => {
-      if (err) throw err;
-      res.json(result.imageUrl);
-    });
-  });
+// connects to db with mongoose to enforce schema
+mongoose.connect(process.env.MONGO_URI) 
+    .then(() => {
+        app.listen(process.env.PORT, () => {  
+        console.log('Connected to DB and Listening on port', process.env.PORT)
+    })
+    }) 
+    .catch((error) => {
+        console.log(error)
+    })
 
-  app.listen(port, () => {
-    console.log(`Server is listening on port ${port}`);
-  });
-});
+
+
+

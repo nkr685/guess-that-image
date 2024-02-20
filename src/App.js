@@ -1,39 +1,18 @@
-import React from 'react';
-import ImageComponent from './components/ImageComponent.js'; // Import the ImageComponent
+import GameContainer from "./GameContainer";
+import GameContextProvider from './context/GameContext';
 
-const App = () => {
+function App() {
+
+  // starts game and provides each component access to global vars
   return (
-    <div>
-      <h1>CS490 Guess That Image</h1>
-      <ImageComponent /> {/* Include the ImageComponent */}
+    <div className="App">
+      <header className="App-header">
+        <GameContextProvider>
+          <GameContainer/>
+        </GameContextProvider>
+      </header>
     </div>
   );
-};
+}
 
 export default App;
-
-// import logo from './logo.svg';
-// import './App.css';
-
-// function App() {
-//   return (
-//     <div className="App">
-//       <header className="App-header">
-//         <img src={logo} className="App-logo" alt="logo" />
-//         <p>
-//           Edit <code>src/App.js</code> and save to reload.
-//         </p>
-//         <a
-//           className="App-link"
-//           href="https://reactjs.org"
-//           target="_blank"
-//           rel="noopener noreferrer"
-//         >
-//           Learn React
-//         </a>
-//       </header>
-//     </div>
-//   );
-// }
-
-// export default App;
