@@ -1,70 +1,34 @@
-# Getting Started with Create React App
+# GUESS THAT IMAGE
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# DESCRIPTION
+Guess That Image is an online web based game that challenges users to guess the identity of zoomed-in images within a given time limit. With a variety of themes and difficulty levels, users can test their recognition skills across categories like cars, animals, clothing brands, locations, video games, and more. The game features a user-friendly interface, scoring system, leaderboards, and the ability to share challenges with friends.
 
-## Available Scripts
+# HOW TO INSTALL AND RUN
+## PREREQUISITES
+### Install Node.js for npm
+https://nodejs.org/en/download/current
+### Install MongoDB Community Server (keep "use as a service" checked) (MongoDB Compass should be included in the installer) 
+https://www.mongodb.com/try/download/community
 
-In the project directory, you can run:
 
-### `npm start`
+## BACKEND PACKAGES TO INSTALL
+npm install nodemon
+npm install express
+npm install mongoose
+npm install dotenv
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## FRONTEND PACKAGES TO INSTALL
+npm install react
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+## RUNNING WEBSITE
+### Step 1: Setting up database
+In MongoDB Compass, create a new database with the name "GameApp" and name the collection "imageurls". Use the import data feature to import the jsons from the sample data folder.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Step 2: Running the server
+In terminal, navigate to the inside of the "Backend" folder and run 'npm run dev'
 
-### `npm run build`
+### Step 3: Running the website
+In terminal, run "npm start"
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+The website should be fully functional.
