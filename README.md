@@ -14,7 +14,7 @@ https://www.mongodb.com/try/download/community
 Navigate to the "Backend" folder and run "npm install"
 
 ## FRONTEND PACKAGES TO INSTALL
-In the project's root folder, run "npm start"
+In the project's root folder, run "npm install"
 
 ## RUNNING WEBSITE
 ### Step 1: Setting up database
