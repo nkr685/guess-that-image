@@ -5,21 +5,20 @@ import ImageDisplay from '../components/ImageDisplay';
 import InputBox from '../components/InputBox';
 import CategorySelectBox from './CategorySelect';
 import { useEffect } from 'react';
-import { GameContext } from '../context/GameContext';
 import { useContext } from 'react';
+import { GameContext } from '../context/GameContext';
 
 function Board({imageUrls}) {
     
     // global vars
-    const {     
-        gameActive, score, correct, incorrect, imageName, guess, next,
-        setScore, setCorrect, setIncorrect, setImageUrl, setImageName, setGuess, setNext
-        } = useContext(GameContext)
+    const   {     
+            gameActive, score, correct, incorrect, imageName, guess, next,
+            setScore, setCorrect, setIncorrect, setImageUrl, setImageName, setGuess, setNext
+            } = useContext(GameContext)
 
     // local vars
     const reward = 300;
     const penalty = 100;
-
 
     // updates every time new game starts
     useEffect(() => { 
@@ -69,7 +68,7 @@ function Board({imageUrls}) {
 
     return (
         <div className='App-header'>
-            <div className='title'>GUESS THAT IMAGE</div>
+            <div className='title' >GUESS THAT IMAGE</div>
             <CategorySelectBox/>
             <Timer/>
             <StateButton/>

@@ -11,19 +11,22 @@ https://nodejs.org/en/download/current
 https://www.mongodb.com/try/download/community
 
 ## BACKEND PACKAGES TO INSTALL
-Navigate to the "Backend" folder and run "npm install"
+Navigate to the "backend" folder and run "npm install"
 
 ## FRONTEND PACKAGES TO INSTALL
-In the project's root folder, run "npm install"
+Navigate to the "frontend" folder and run "npm install"
 
 ## RUNNING WEBSITE
-### Step 1: Setting up database
-In MongoDB Compass, create a new database with the name "GameApp" and name the collection "imageurls". Use the import data feature to import the jsons from the sample data folder.
+### Step 1: Setting up database (Choose one) (/backend/.env not uploaded to github repo)
+#### Cloud Database
+If using MongoDB Atlas, the provided .env will automatically connect to the cloud database. 
+#### Local Database
+If you are connecting locally, switch to the local MONGO_URI in the .env. Then, in MongoDB Compass, connect to the local MONGO_URI and set up a new database named "GuessThatImage" with the collections named "ImageUrls" and "Users". Import the provided jsons in the "sample data" folder into the "ImageUrls" collection.
 
 ### Step 2: Running the server
-Mavigate to the inside of the "Backend" folder and run 'npm run dev'
+Run 'npm run dev' inside of the "backend" folder 
 
 ### Step 3: Running the website
-In the project's root folder, run "npm start"
+Run "npm start" inside the "frontend" folder
 
 The website should be fully functional.

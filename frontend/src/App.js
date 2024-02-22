@@ -14,7 +14,7 @@ function App() {
   // GET IMAGES FROM DATABASE BEFORE RUNNING APP!!!!
   useEffect(() => {
       const fetchImageUrls = async()=> {
-          const response = await fetch(`ImageUrls?category=${category}`) // http://localhost:4000 REMOVED AFTER ADDING PROXY
+          const response = await fetch(`api/ImageUrls?category=${category}`) // http://localhost:4000 REMOVED AFTER ADDING PROXY
           const json = await response.json()
           if (response.ok) {
               setImageUrls(json)

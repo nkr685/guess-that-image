@@ -9,15 +9,14 @@ const app = express()
 app.use(express.json())
 
 //grabs all routes and attaches it to express
-app.use('/ImageUrls', imageUrlRoutes)
-app.use('/Users', userRoutes) 
-
+app.use('/api/ImageUrls', imageUrlRoutes)
+app.use('/api/Users', userRoutes) 
 
 // connects to db with mongoose to enforce schema
-mongoose.connect(process.env.MONGO_URI) 
+mongoose.connect(process.env.MONGO_URI, {dbName: 'GuessThatImage'}) 
     .then(() => {
         app.listen(process.env.PORT, () => {  
-        console.log('Connected to DB and Listening on port', process.env.PORT)
+        console.log('Connected to database and listening on port', process.env.PORT)
     })
     }) 
     .catch((error) => {

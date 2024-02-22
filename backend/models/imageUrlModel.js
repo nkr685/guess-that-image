@@ -15,6 +15,6 @@ const imageUrlSchema = new Schema({
         type: String,
         required: true
     }
-})
+}, {collection: 'ImageUrls'})
 
 module.exports = mongoose.model('ImageUrl', imageUrlSchema)

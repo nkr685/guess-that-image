@@ -18,7 +18,7 @@ const ImageDisplay = () => {
     const heightOffset = heightMultiplier * (height/4 - (height/4 * (count/ limit)))
     const [url, setUrl] = useState(placeholderUrl)
     const [zoom, setZoom] = useState(1);
-    const [hintText, setHintText] = useState(`Hint ${count}/${limit}`)
+    const [hintText, setHintText] = useState(`Hint 0/${limit}`)
 
     // updates image
     useEffect(() => {
@@ -34,7 +34,7 @@ const ImageDisplay = () => {
             setWidthMultiplier(0);
         }
         setCount(0)
-        setHintText(`Hint ${count}/${limit}`)
+        setHintText(`Hint 0/${limit}`)
     }, [gameActive, imageUrl]);
 
     // zooming
@@ -50,7 +50,7 @@ const ImageDisplay = () => {
     useEffect(() => {
         if (next) {
             setCount(0)
-            setHintText(`Hint ${count}/${limit}`)
+            setHintText(`Hint 0/${limit}`)
         }
     }, [next])
 

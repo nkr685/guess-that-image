@@ -3,14 +3,15 @@ const Schema = mongoose.Schema
 
 // schema for user documents in db
 const UserSchema = new Schema({
-    name: {
-        type: String,
-        required: true
-    },
     username: {
+        type: String,
+        required: true,
+        unique: true
+    },
+    password: {
         type: String,
         required: true
     }
-})
+}, {collection: 'Users'})
 
 module.exports = mongoose.model('User', UserSchema)
