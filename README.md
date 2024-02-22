@@ -10,25 +10,20 @@ https://nodejs.org/en/download/current
 ### Install MongoDB Community Server (keep "use as a service" checked) (MongoDB Compass should be included in the installer) 
 https://www.mongodb.com/try/download/community
 
-
 ## BACKEND PACKAGES TO INSTALL
-npm install nodemon
-npm install express
-npm install mongoose
-npm install dotenv
+Navigate to the "Backend" folder and run "npm install"
 
 ## FRONTEND PACKAGES TO INSTALL
-npm install react
-
+In the project's root folder, run "npm start"
 
 ## RUNNING WEBSITE
 ### Step 1: Setting up database
 In MongoDB Compass, create a new database with the name "GameApp" and name the collection "imageurls". Use the import data feature to import the jsons from the sample data folder.
 
 ### Step 2: Running the server
-In terminal, navigate to the inside of the "Backend" folder and run 'npm run dev'
+Mavigate to the inside of the "Backend" folder and run 'npm run dev'
 
 ### Step 3: Running the website
-In terminal, run "npm start"
+In the project's root folder, run "npm start"
 
 The website should be fully functional.
