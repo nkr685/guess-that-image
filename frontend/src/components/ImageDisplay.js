@@ -7,7 +7,6 @@ const ImageDisplay = () => {
     const { gameActive, imageUrl, imageName, next} = useContext(GameContext)
 
     // local vars
-    const placeholderUrl = "https://upload.wikimedia.org/wikipedia/commons/2/25/Icon-round-Question_mark.jpg"
     const limit = 3;
     const height = 600;
     const width = 1000;
@@ -16,26 +15,26 @@ const ImageDisplay = () => {
     const [count, setCount] = useState(0);
     const widthOffset = widthMultiplier * (width/4 - (width/4 * (count/ limit)))
     const heightOffset = heightMultiplier * (height/4 - (height/4 * (count/ limit)))
-    const [url, setUrl] = useState(placeholderUrl)
     const [zoom, setZoom] = useState(1);
     const [hintText, setHintText] = useState(`Hint 0/${limit}`)
+    const [url, setUrl] = useState("")
 
     // updates image
-    useEffect(() => {
+    if (url !== imageUrl) { // used useeffect on next before, idk if its affecting performance
+        setUrl(imageUrl)
         if (gameActive) {
             setZoom(limit+1)
-            setUrl(imageUrl)
             setHeightMultiplier(Math.random() * 2 - 1);
             setWidthMultiplier(Math.random() * 2 - 1);
+
         } else {
             setZoom(1) // zoom 1x is original size
-            setUrl(placeholderUrl)
             setHeightMultiplier(0);
             setWidthMultiplier(0);
         }
         setCount(0)
         setHintText(`Hint 0/${limit}`)
-    }, [gameActive, imageUrl]);
+    }
 
     // zooming
     const handleZoomOut = () => {
@@ -46,18 +45,10 @@ const ImageDisplay = () => {
         }
     };
 
-    // resets hints
-    useEffect(() => {
-        if (next) {
-            setCount(0)
-            setHintText(`Hint 0/${limit}`)
-        }
-    }, [next])
-
     return (
         <>
         <div className="image-container" style={{width, height}}>
-            <img className="image" src={url} alt={imageName} style={{    
+            <img className="image" src={imageUrl} alt={imageName} style={{    
                 transform: `scale(${zoom}) translate(${widthOffset}px, ${heightOffset}px)`,
             }}></img>
         </div>

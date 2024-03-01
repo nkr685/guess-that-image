@@ -1,0 +1,157 @@
+[
+  {
+    "category": "nfl",
+    "url": "https://static.www.nfl.com/league/api/clubs/logos/CIN.svg",
+    "name": "Cincinnati Bengals"
+  },
+  {
+    "category": "nfl",
+    "url": "https://static.www.nfl.com/league/api/clubs/logos/CLE.svg",
+    "name": "Cleveland Browns"
+  },
+  {
+    "category": "nfl",
+    "url": "https://static.www.nfl.com/league/api/clubs/logos/PIT.svg",
+    "name": "Pittsburgh Steelers"
+  },
+  {
+    "category": "nfl",
+    "url": "https://static.www.nfl.com/league/api/clubs/logos/BUF.svg",
+    "name": "Buffalo Bills"
+  },
+  {
+    "category": "nfl",
+    "url": "https://static.www.nfl.com/league/api/clubs/logos/MIA.svg",
+    "name": "Miami Dolphins"
+  },
+  {
+    "category": "nfl",
+    "url": "https://static.www.nfl.com/league/api/clubs/logos/NE.svg",
+    "name": "New England Patriots"
+  },
+  {
+    "category": "nfl",
+    "url": "https://static.www.nfl.com/league/api/clubs/logos/NYJ.svg",
+    "name": "New York Jets"
+  },
+  {
+    "category": "nfl",
+    "url": "https://static.www.nfl.com/league/api/clubs/logos/HOU.svg",
+    "name": "Houston Texans"
+  },
+  {
+    "category": "nfl",
+    "url": "https://static.www.nfl.com/league/api/clubs/logos/IND.svg",
+    "name": "Indianapolis Colts"
+  },
+  {
+    "category": "nfl",
+    "url": "https://static.www.nfl.com/league/api/clubs/logos/JAX.svg",
+    "name": "Jacksonville Jaguars"
+  },
+  {
+    "category": "nfl",
+    "url": "https://static.www.nfl.com/league/api/clubs/logos/TEN.svg",
+    "name": "Tennessee Titans"
+  },
+  {
+    "category": "nfl",
+    "url": "https://static.www.nfl.com/league/api/clubs/logos/DEN.svg",
+    "name": "Denver Broncos"
+  },
+  {
+    "category": "nfl",
+    "url": "https://static.www.nfl.com/league/api/clubs/logos/KC.svg",
+    "name": "Kansas City Chiefs"
+  },
+  {
+    "category": "nfl",
+    "url": "https://static.www.nfl.com/league/api/clubs/logos/LV.svg",
+    "name": "Las Vegas Raiders"
+  },
+  {
+    "category": "nfl",
+    "url": "https://static.www.nfl.com/league/api/clubs/logos/LAC.svg",
+    "name": "Los Angeles Chargers"
+  },
+  {
+    "category": "nfl",
+    "url": "https://static.www.nfl.com/league/api/clubs/logos/CHI.svg",
+    "name": "Chicago Bears"
+  },
+  {
+    "category": "nfl",
+    "url": "https://static.www.nfl.com/league/api/clubs/logos/DET.svg",
+    "name": "Detroit Lions"
+  },
+  {
+    "category": "nfl",
+    "url": "https://static.www.nfl.com/league/api/clubs/logos/GB.svg",
+    "name": "Green Bay Packers"
+  },
+  {
+    "category": "nfl",
+    "url": "https://static.www.nfl.com/league/api/clubs/logos/MIN.svg",
+    "name": "Minnesota Vikings"
+  },
+  {
+    "category": "nfl",
+    "url": "https://static.www.nfl.com/league/api/clubs/logos/DAL.svg",
+    "name": "Dallas Cowboys"
+  },
+  {
+    "category": "nfl",
+    "url": "https://static.www.nfl.com/league/api/clubs/logos/NYG.svg",
+    "name": "New York Giants"
+  },
+  {
+    "category": "nfl",
+    "url": "https://static.www.nfl.com/league/api/clubs/logos/PHI.svg",
+    "name": "Philadelphia Eagles"
+  },
+  {
+    "category": "nfl",
+    "url": "https://static.www.nfl.com/league/api/clubs/logos/WAS.svg",
+    "name": "Washington Commanders"
+  },
+  {
+    "category": "nfl",
+    "url": "https://static.www.nfl.com/league/api/clubs/logos/ATL.svg",
+    "name": "Atlanta Falcons"
+  },
+  {
+    "category": "nfl",
+    "url": "https://static.www.nfl.com/league/api/clubs/logos/CAR.svg",
+    "name": "Carolina Panthers"
+  },
+  {
+    "category": "nfl",
+    "url": "https://static.www.nfl.com/league/api/clubs/logos/NO.svg",
+    "name": "New Orleans Saints"
+  },
+  {
+    "category": "nfl",
+    "url": "https://static.www.nfl.com/league/api/clubs/logos/TB.svg",
+    "name": "Tampa Bay Buccaneers"
+  },
+  {
+    "category": "nfl",
+    "url": "https://static.www.nfl.com/league/api/clubs/logos/ARI.svg",
+    "name": "Arizona Cardinals"
+  },
+  {
+    "category": "nfl",
+    "url": "https://static.www.nfl.com/league/api/clubs/logos/LA.svg",
+    "name": "Los Angeles Rams"
+  },
+  {
+    "category": "nfl",
+    "url": "https://static.www.nfl.com/league/api/clubs/logos/SF.svg",
+    "name": "San Francisco 49ers"
+  },
+  {
+    "category": "nfl",
+    "url": "https://static.www.nfl.com/league/api/clubs/logos/SEA.svg",
+    "name": "Seattle Seahawks"
+  }
+]

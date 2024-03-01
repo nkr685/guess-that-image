@@ -26,8 +26,8 @@ function Board({imageUrls}) {
             setScore(0)
             setCorrect(0)
             setIncorrect(0)
-            NextImage()
         }
+        NextImage()
     }, [gameActive])
 
     // updates on every guess
@@ -60,10 +60,17 @@ function Board({imageUrls}) {
 
     // gets next image from imageUrls
     const NextImage = () => { 
-        const randomIndex = Math.floor(Math.random() * imageUrls.length);
-        const image = imageUrls.splice(randomIndex, 1)[0]
-        setImageUrl(image["url"])
-        setImageName(image["name"])
+        if (gameActive) {
+            const randomIndex = Math.floor(Math.random() * imageUrls.length);
+            const image = imageUrls.splice(randomIndex, 1)[0]
+            setImageUrl(image["url"])
+            setImageName(image["name"])
+        }
+        else {
+            setImageUrl("https://upload.wikimedia.org/wikipedia/commons/2/25/Icon-round-Question_mark.jpg")
+            setImageName("Placeholder")
+        }
+
     }
 
     return (
