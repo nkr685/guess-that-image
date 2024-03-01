@@ -75,7 +75,6 @@ function Board({imageUrls}) {
 
     return (
         <div className='App-header'>
-            <div className='title' >GUESS THAT IMAGE</div>
             <CategorySelectBox/>
             <Timer/>
             <StateButton/>
