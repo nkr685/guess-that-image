@@ -1,9 +1,9 @@
-import StateButton from '../components/StateButton';
-import Timer from '../components/Timer';
-import ScoreBoard from '../components/Scoreboard';
-import ImageDisplay from '../components/ImageDisplay';
-import InputBox from '../components/InputBox';
-import CategorySelectBox from './CategorySelect';
+import StateButton from './board components/StateButton';
+import Timer from './board components/Timer';
+import ScoreBoard from './board components/Scoreboard';
+import ImageDisplay from './board components/ImageDisplay';
+import InputBox from './board components/InputBox';
+import CategorySelectBox from './board components/CategorySelect';
 import { useEffect } from 'react';
 import { useContext } from 'react';
 import { GameContext } from '../context/GameContext';
@@ -74,8 +74,7 @@ function Board({imageUrls}) {
     }
 
     return (
-        <div className='App-header'>
-            <CategorySelectBox/>
+        <div className='App-header' style={{ height: '90vh' }}>
             <Timer/>
             <StateButton/>
             <ImageDisplay/>

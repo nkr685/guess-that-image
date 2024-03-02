@@ -1,6 +1,7 @@
 import { useState, useEffect, useContext } from 'react';
 import { GameContext } from '../context/GameContext';
 import Board from '../components/Board';
+import { useLocation } from 'react-router-dom';
 
 const PlayGame = () => {
     // global vars
@@ -8,6 +9,7 @@ const PlayGame = () => {
 
     // local vars
     const [imageUrls, setImageUrls] = useState(null)
+
 
     // GET IMAGES FROM DATABASE BEFORE RUNNING APP!!!!
     useEffect(() => {
@@ -21,7 +23,6 @@ const PlayGame = () => {
 
         fetchImageUrls()
     }, [category, setImageUrls])
-
 
     // returns loading screen until database loaded
     if (!imageUrls || imageUrls.length === 0) {

@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from "react";
-import { GameContext } from "../context/GameContext";
+import { GameContext } from "../../context/GameContext";
 
 const StateButton = () => {
     // global vars

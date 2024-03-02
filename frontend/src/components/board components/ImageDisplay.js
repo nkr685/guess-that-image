@@ -1,5 +1,5 @@
 import { useContext, useState, useEffect } from "react";
-import { GameContext } from "../context/GameContext";
+import { GameContext } from "../../context/GameContext";
 
 const ImageDisplay = () => {
     
