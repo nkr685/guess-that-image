@@ -6,184 +6,218 @@ body {
       sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-  }
-  
-  .App-header {
-    background-color: #282c34;
-    min-height: 80vh;
-    max-height: 95vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
-  }
-  
-  .Loading-header {
-    background-color: #282c34;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: 50px;
-    color: white;
-  }
-  
-  .App {
-    background-color: #282c34;
-    min-height: 100vh;
-    color: white;
-  }
-  
-  /* ADDITIONS START HERE */
-  .image-container {
-    overflow: hidden; 
-    background-color: white;
-  }
-  
-  .container {
-    color: red;
-  }
-  
-  .image {
-    position: relative;
-    max-width: 100%;
-    max-height: 100%; 
-    object-fit: cover;
-    width: auto;
-    height: auto; 
-    display: block; 
-    margin: 0 auto; 
-  }
-  
-  .title {
-    font-size: 72px;
-  }
-  
-  .input-box {
-    width: auto;
-    font-size: 36px;
-  }
-  .guess-button {
-
-    font-size: 36px;
-  }
-  
-  .skip-button {
-
-    font-size: 36px;
-  }
-  
-  .score {
-    font-size: 40px;
-  }
-  
-  .timer {
-    font-size: 50px;
-  }
-  
-  .state-button {
-    font-size: 30px;
-    width: 200px;
-    height: 40px;
-  }
-  
-  .hint-button {
-    font-size: 30px;
-    width: 150px;
-    height: 40px;
-  }
-  
-  .category-select {
-    font-size: 30px;
-  }
-  
-  .home {
-    background-color: #282c34;
-    color: #fff;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    /* grid-template-rows: auto; */
-  }
-  
-
-  
-  
-  /* NAVBAR STYLING */
-  
-  .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #333;
-    padding: 10px 20px; /* Add padding for better spacing */
-  }
-  
-  .navbar h2 {
-    margin: 0; /* Remove default margin for h2 elements */
-    color: white;
-    text-decoration: none;
-  }
-  
-  .nav-links {
-    display: flex;
-    gap: 20px; /* Adjust the gap between links */
-  }
-  
-  .nav-links a {
-    color: white;
-    text-decoration: none;
-  }
-  
-  /* Change the link color to #111 (black) on hover */
-  .nav-links a:hover {
-    background-color: #111;
-  }
-  
-  /*  PROGRESS BAR */
-  .progress-bar {
-    height: 50px;
-    width: 100%;
-    background-color: #fff; /* White background */
-    overflow: hidden;
-  }
-  
-  .progress-bar-inner {
-    height: 100%;
-    display: flex;
-    justify-content: flex-start;
-    color: #fff;
-    transition: width .5s ease; /* CSS transition for smooth width change */
-  }
-  
-  .progress-bar-inner.green {
-    background-color: #4caf50; /* Green color for progress */
-  }
-  
-  .progress-bar-inner.red {
-    background-color: #e74c3c; /* Red color when time is almost zero */
-  
-  }
-
-
- /* Card  */
-
- .card-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px; /* Adjust the gap between cards */
-  justify-content: flex-start; /* Align items at the start of the flex container */
 }
 
-/* Adjust the width of the cards */
-.card {
-  width: 200px; /* Set the desired width */
-  height: 250px; /* Set the desired height */
+
+.App-header {
+  background-color: #282c34;
+  min-height: 80vh;
+  max-height: 95vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.Loading-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 50px;
+  color: white;
+}
+
+.App {
+  background-color: #282c34;
+  min-height: 100vh;
+  color: white;
+}
+  
+
+
+/* BOARD COMPONENTS */
+
+.image-container {
+  overflow: hidden; 
+  background-color: white;
+}
+
+.container {
+  color: red;
+}
+
+.image {
+  position: relative;
+  max-width: 100%;
+  max-height: 100%; 
+  object-fit: cover;
+  width: auto;
+  height: auto; 
+  display: block; 
+  margin: 0 auto; 
+}
+
+.title {
+  font-size: 72px;
+}
+
+.input-box {
+  width: auto;
+  font-size: 36px;
+}
+.guess-button {
+
+  font-size: 36px;
+}
+
+.skip-button {
+
+  font-size: 36px;
+}
+
+.quiz {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 40px;
+}
+
+.score {
+  display: flex;
+  justify-content: flex-end;
+  gap: 30px;
+  width: 820px;
+}
+
+.timer {
+  font-size: 50px;
+}
+
+.state-button {
+  font-size: 30px;
+  width: 200px;
+  height: 40px;
+}
+
+.hint-button {
+  font-size: 30px;
+  width: 150px;
+  height: 40px;
+}
+
+.category-select {
+  font-size: 30px;
+}
+  
+
+
+/* PAGES */
+
+  .home {
+    padding: 30px;
+  }
+
+
+  
+/* NAVIGATION BAR */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  padding: 10px 20px; /* Add padding for better spacing */
+  gap: 20px;
+}
+
+.navbar h2 {
+  margin: 0; /* Remove default margin for h2 elements */
+  color: white;
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px; /* Adjust the gap between links */
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+}
+
+.nav-links button {
+  color: white;
+  background-color: #ff0000;
+  text-decoration: none;
+  padding: 10px;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.nav-links a:hover {
+  background-color: #111;
+}
+
+
+
+/*  PROGRESS BAR */
+
+.progress-bar {
+  height: 50px;
+  width: 100%;
+  background-color: #cacaca;
   overflow: hidden;
-  border: 1px solid #ddd;
-  margin: 0; /* Remove margin to ensure consistent spacing */
+}
+
+.progress-bar-inner {
+  height: 100%;
+  display: block;
+  justify-content: center;
+  color: #000;
+  transition: width .5s ease;
+}
+
+.progress-bar-inner.green {
+  background-color: #4caf50;
+}
+
+.progress-bar-inner.red {
+  background-color: #e74c3c;
+
+}
+
+.progress-bar-inner.yellow {
+  background-color: #e7e43c;
+
+}
+
+
+
+ /* CARD  */
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; 
+  justify-content: flex-start; 
+}
+
+.card {
+  width: 200px; 
+  height: 250px; 
+  overflow: hidden;
+  border: 1px solid #f0f0f0;
+  margin: 0; 
   background-color: white;
   display: flex;
   align-items: center;
@@ -209,4 +243,23 @@ body {
   background-color: #333;
   color: white;
   text-align: center;
+}
+
+
+
+/* SIGNUP / LOGIN */
+
+form.signup, form.login {
+  font-size: 3vh;
+  max-width: 400px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #333;
+  border-radius: 4px;
+}
+
+form.signup button, form.login button {
+  font-size: 30px;
+  padding: 5px;
+  width: 150px;
 }

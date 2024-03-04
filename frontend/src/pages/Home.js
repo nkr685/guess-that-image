@@ -1,13 +1,17 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import Card from '../components/Card';
+import { GameContext } from '../context/GameContext';
 
 const Home = () => {
     // global vars
+    const   {     
+      setCategory, setCategoryName
+      } = useContext(GameContext)
 
     // local vars
     const [categories, setCategories] = useState(null)
 
-    // GET IMAGES FROM DATABASE BEFORE RUNNING APP!!!!
+
     useEffect(() => {
         const fetchCategories = async()=> {
             const response = await fetch(`api/Categories`) // http://localhost:4000 REMOVED AFTER ADDING PROXY
@@ -18,7 +22,7 @@ const Home = () => {
         }
 
         fetchCategories()
-    }, [categories, setCategories])
+    }, [categories])
 
     // returns loading screen until database loaded
     if (!categories || categories.length === 0) {
@@ -30,14 +34,20 @@ const Home = () => {
         </div>
         );
     }
+
+    const handleCardClick = (item) => {
+      setCategory(item.dataset)
+      setCategoryName(item.name)
+    }
+
     return (
-        <div>
+        <div className='home'>
           {categories.map((category, idx1) => (
             <div key={idx1}>
-              <h2>{category.category}</h2>
+              <h2 style={{fontSize: 30}}>{category.category}</h2>
               <div className="card-container">
                 {category.quiz.map((item, idx2) => (
-                  <Card key={idx2} title={item.name} thumbnail={item.thumbnail} linkTo={`/game`} />
+                  <Card key={idx2} title={item.name} thumbnail={item.thumbnail} linkTo="/game" onClick={()=> handleCardClick(item)}/>
                 ))}
               </div>
             </div>

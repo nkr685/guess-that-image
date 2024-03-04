@@ -13,7 +13,8 @@ const GameContextProvider = (props) => {
     const [imageName, _setImageName] = useState("")
     const [guess, _setGuess] = useState("");
     const [next, _setNext] = useState(false)
-    const [category, _setCategory] = useState("car_logos")
+    const [category, _setCategory] = useState("")
+    const [categoryName, _setCategoryName] = useState("")
 
     
     const toggleGameState = () => {
@@ -48,14 +49,18 @@ const GameContextProvider = (props) => {
         _setNext(bool)
     }
 
-    const setCategory = (bool) => {
-        _setCategory(bool)
+    const setCategory = (category) => {
+        _setCategory(category)
+    }
+
+    const setCategoryName = (categoryName) => {
+        _setCategoryName(categoryName)
     }
 
     return (
         <GameContext.Provider value={{
-                    gameActive, score, correct, incorrect, imageUrl, imageName, guess, next, category,
-                    toggleGameState, setScore, setCorrect, setIncorrect, setImageUrl, setImageName, setGuess, setNext, setCategory
+                    gameActive, score, correct, incorrect, imageUrl, imageName, guess, next, category, categoryName,
+                    toggleGameState, setScore, setCorrect, setIncorrect, setImageUrl, setImageName, setGuess, setNext, setCategory, setCategoryName
             }}>
             {props.children}
         </GameContext.Provider>

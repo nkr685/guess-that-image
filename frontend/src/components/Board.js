@@ -3,7 +3,6 @@ import Timer from './board components/Timer';
 import ScoreBoard from './board components/Scoreboard';
 import ImageDisplay from './board components/ImageDisplay';
 import InputBox from './board components/InputBox';
-import CategorySelectBox from './board components/CategorySelect';
 import { useEffect } from 'react';
 import { useContext } from 'react';
 import { GameContext } from '../context/GameContext';
@@ -20,12 +19,16 @@ function Board({imageUrls}) {
     const reward = 300;
     const penalty = 100;
 
+
+    
     // updates every time new game starts
     useEffect(() => { 
         if(gameActive) {
             setScore(0)
             setCorrect(0)
             setIncorrect(0)
+        } else {
+
         }
         NextImage()
     }, [gameActive])
@@ -34,7 +37,7 @@ function Board({imageUrls}) {
     useEffect(() => { 
         if(gameActive) {
             if (guess === '') {}  // setGuess in this useEffect calls useEffect again
-            else if (guess.toLowerCase() === imageName.toLowerCase()) {
+            else if (imageName.toLowerCase().indexOf(guess.toLowerCase()) !== -1 && guess.length >= 3) {
                 setScore(score+reward)
                 setCorrect(correct+1)
                 NextImage()
@@ -75,10 +78,10 @@ function Board({imageUrls}) {
 
     return (
         <div className='App-header' style={{ height: '90vh' }}>
-            <Timer/>
             <StateButton/>
-            <ImageDisplay/>
             <ScoreBoard/>
+            <Timer/>
+            <ImageDisplay/>
             <InputBox/>    
         </div>
     );
