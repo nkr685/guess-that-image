@@ -5,7 +5,7 @@ export const GameContext = createContext();
 
 // all global variables/functions declared/instatiated here
 const GameContextProvider = (props) => {
-    const [gameActive, setGameState] = useState(false);
+    const [gameActive, _setGameState] = useState(false);
     const [score, _setScore] = useState(0);
     const [correct, _setCorrect] = useState(0);
     const [incorrect, _setIncorrect] = useState(0);
@@ -15,10 +15,11 @@ const GameContextProvider = (props) => {
     const [next, _setNext] = useState(false)
     const [category, _setCategory] = useState("")
     const [categoryName, _setCategoryName] = useState("")
+    const [played, _setPlayed] = useState(false)
 
     
     const toggleGameState = () => {
-        setGameState(!gameActive)
+        _setGameState(!gameActive)
     }
 
     const setScore = (points) => {
@@ -57,10 +58,15 @@ const GameContextProvider = (props) => {
         _setCategoryName(categoryName)
     }
 
+    const togglePlayed = () => {
+        _setPlayed(!played)
+    }
+
+
     return (
         <GameContext.Provider value={{
-                    gameActive, score, correct, incorrect, imageUrl, imageName, guess, next, category, categoryName,
-                    toggleGameState, setScore, setCorrect, setIncorrect, setImageUrl, setImageName, setGuess, setNext, setCategory, setCategoryName
+                    gameActive, score, correct, incorrect, imageUrl, imageName, guess, next, category, categoryName, played,
+                    toggleGameState, setScore, setCorrect, setIncorrect, setImageUrl, setImageName, setGuess, setNext, setCategory, setCategoryName, togglePlayed
             }}>
             {props.children}
         </GameContext.Provider>

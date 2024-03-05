@@ -20,7 +20,7 @@ const getLeaderboard = async (req, res) => {
     }
     const leaderboard = await Leaderboard.findById(id)
     if (!leaderboard) {
-        return res.status(404).json({error: "GET no such image"})
+        return res.status(404).json({error: "GET no such leaderboard"})
     }
     return res.status(200).json(leaderboard)
 }
@@ -50,16 +50,19 @@ const deleteLeaderboard = async (req, res) => {
 // update an leaderboard 
 const updateLeaderboard = async (req, res) => {
     const {id} = req.params
+    const leaderboard = req.body
     if (!mongoose.Types.ObjectId.isValid(id)){
         return res.status(404).json({error: 'UPDATE invalid id'})
     }
-    const leaderboard = await Leaderboard.findOneAndUpdate({_id: id}, {
-        ...req.body
-    })
-    if (!leaderboard) {
+    const updatedLeaderboard = await Leaderboard.findOneAndUpdate(
+        { _id: id },
+        { $set: { scores: leaderboard.scores} },
+        { new: true } 
+    ).exec()
+    if (!updatedLeaderboard) {
         return res.status(404).json({error: "UPDATE no such leaderboard"})
     }
-    res.status(200).json(leaderboard)
+    res.status(200).json(updatedLeaderboard)
 
 }
 

@@ -11,6 +11,7 @@ import Login from './pages/Login.js';
 import Signup from './pages/Signup.js';
 import Upload from './pages/Upload.js';
 import Leaderboard from './pages/Leaderboard.js';
+import Account from './pages/Account.js';
 
 // need this extra layer to update category 
 function App() {
@@ -44,6 +45,10 @@ function App() {
           <Route 
             path = "/upload"
             element={<Upload/>}>
+          </Route>
+          <Route 
+            path = "/account"
+            element={user ? <Account/> : <Navigate to="/"/>}>
           </Route>
         </Routes>
       </BrowserRouter>

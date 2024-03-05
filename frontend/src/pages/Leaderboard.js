@@ -46,9 +46,8 @@ const Leaderboard = () => {
     setLeaderboardID(e.target.value)
 }
     return (
-      <div>
+      <div className='Leaderboard'>
         <div>
-            <label >QUIZ: </label>
             <select className="category-select" onChange={handleSelectChange}>
                 {!leaderboardID && (<option key={-1} >Select Quiz</option>)
                 }
@@ -58,8 +57,7 @@ const Leaderboard = () => {
             </select>    
         </div>        
       <div>
-        {leaderboard && leaderboard.scores && leaderboard.scores.length > 0 && (
-          <table>
+      <table className="Leaderboard-table">
             <thead>
               <tr>
                 <th>Rank</th>
@@ -67,17 +65,22 @@ const Leaderboard = () => {
                 <th>Score</th>
               </tr>
             </thead>
+      {leaderboard && leaderboard.scores && leaderboard.scores.length > 0 && (
+
             <tbody>
-              {leaderboard.scores.map((entry, index) => (
-                <tr key={index}>
-                  <td>{index + 1}</td>
-                  <td>{entry.user}</td>
-                  <td>{entry.score}</td>
-                </tr>
-              ))}
+              {leaderboard.scores
+                .sort((a, b) => b.score - a.score) // Sort by score in descending order
+                .map((entry, index) => (
+                  <tr key={index}>
+                    <td>{index + 1}</td>
+                    <td>{entry.user}</td>
+                    <td>{entry.score}</td>
+                  </tr>
+                ))}
             </tbody>
-          </table>
         )}
+          </table>
+
       </div>
     </div>
 

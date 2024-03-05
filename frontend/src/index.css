@@ -154,9 +154,12 @@ body {
 .nav-links button {
   color: white;
   background-color: #ff0000;
-  text-decoration: none;
-  padding: 10px;
-  margin: 0;
+  margin: 10;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -262,4 +265,151 @@ form.signup button, form.login button {
   font-size: 30px;
   padding: 5px;
   width: 150px;
+}
+
+/* Leaderboard *//* Leaderboard Container */
+/* Leaderboard Container */
+.Leaderboard {
+  text-align: center;
+}
+
+/* Dropdown Styles */
+.Leaderboard .category-select {
+  padding: 5px;
+  margin-top: 10px;
+}
+
+/* Table Styles */
+.Leaderboard-table {
+  margin: auto; /* Center the table horizontally */
+  width: 80%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.Leaderboard th,
+.Leaderboard td {
+  padding: 15px; /* Increased padding for better readability */
+  border: 1px solid #ddd;
+  text-align: center;
+  position: relative;
+  font-size: 24px; /* Adjusted font size for better readability */
+}
+
+.Leaderboard th {
+  background-color: #333; /* Dark gray header background */
+  color: white;
+  font-size: 32px;
+}
+
+/* Alternating Row Colors */
+.Leaderboard tbody tr:nth-child(even) {
+  background-color: #555555; /* Less dark gray for even rows */
+}
+
+.Leaderboard tbody tr:nth-child(odd) {
+  background-color: #444444; /* Even less dark gray for odd rows */
+}
+/* Rank Number Styles */
+.Leaderboard tbody tr:nth-child(1) td:first-child::before {
+  content: attr(data-rank);
+  display: block;
+  width: 40px; /* Increased width for better visibility */
+  height: 40px; /* Increased height for better visibility */
+  border-radius: 50%;
+  line-height: 40px; /* Adjusted line height for better visibility */
+  background-color: #ffd700; /* Gold for 1st place */
+  color: #333;
+  font-weight: bold;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2; /* Ensure the rank number is above the cell content */
+}
+
+.Leaderboard tbody tr:nth-child(2) td:first-child::before {
+  content: attr(data-rank);
+  display: block;
+  width: 40px; /* Increased width for better visibility */
+  height: 40px; /* Increased height for better visibility */
+  border-radius: 50%;
+  line-height: 40px; /* Adjusted line height for better visibility */
+  background-color: #c0c0c0; /* Silver for 2nd place */
+  color: #333;
+  font-weight: bold;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2; /* Ensure the rank number is above the cell content */
+}
+
+.Leaderboard tbody tr:nth-child(3) td:first-child::before {
+  content: attr(data-rank);
+  display: block;
+  width: 40px; /* Increased width for better visibility */
+  height: 40px; /* Increased height for better visibility */
+  border-radius: 50%;
+  line-height: 40px; /* Adjusted line height for better visibility */
+  background-color: #cd7f32; /* Bronze for 3rd place */
+  color: #333;
+  font-weight: bold;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2; /* Ensure the rank number is above the cell content */
+}
+
+/* Ensure text is visible */
+.Leaderboard tbody td {
+  position: relative;
+  z-index: 1; /* Ensure the text is above the pseudo-element */
+}
+
+/* ACCOUNT */
+.account-container {
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #3b3b3b;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+.account-user-info {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.account-button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.account-change-password-btn,
+.account-delete-account-btn {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  margin-bottom: 10px;
+  transition: background-color 0.3s;
+}
+
+.account-change-password-btn {
+  background-color: #3498db; /* Blue */
+}
+
+.account-delete-account-btn {
+  background-color: #e74c3c; /* Red */
+}
+
+.account-change-password-btn:hover,
+.account-delete-account-btn:hover {
+  background-color: #333;
 }

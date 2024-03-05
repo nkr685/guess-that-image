@@ -11,8 +11,8 @@ function Board({imageUrls}) {
     
     // global vars
     const   {     
-            gameActive, score, correct, incorrect, imageName, guess, next,
-            setScore, setCorrect, setIncorrect, setImageUrl, setImageName, setGuess, setNext
+            gameActive, score, correct, incorrect, imageName, guess, next, played,
+            setScore, setCorrect, setIncorrect, setImageUrl, setImageName, setGuess, setNext, togglePlayed
             } = useContext(GameContext)
 
     // local vars
@@ -24,6 +24,9 @@ function Board({imageUrls}) {
     // updates every time new game starts
     useEffect(() => { 
         if(gameActive) {
+            if (!played) {
+                togglePlayed()
+            }
             setScore(0)
             setCorrect(0)
             setIncorrect(0)
