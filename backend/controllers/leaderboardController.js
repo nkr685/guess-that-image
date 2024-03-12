@@ -2,13 +2,13 @@ const Leaderboard = require('../models/leaderboardModel.js')
 const mongoose = require('mongoose')
 
 // get leaderboard by dataset 
-const getLeaderboards = async (req, res, db) => {
+const getLeaderboards = async (req, res) => {
     try {
         const leaderboard = await Leaderboard.find({});
     
-        res.status(200).json(leaderboard);
+        return res.status(200).json(leaderboard);
     } catch (error) {
-        res.status(500).json({error: 'GETALL Cant find category'});
+        return res.status(500).json({error: 'GETALL Cant find category'});
       }
 }
 
@@ -27,42 +27,30 @@ const getLeaderboard = async (req, res) => {
 
 // create a new leaderboard
 const createLeaderboard = async (req, res) => {
-    const {id, dataset, name, score} = req.body
-    const leaderboard = await Leaderboard.create({id, dataset, name, score})
-    if (!leaderboard) {
-        return res.status(404).json({error: "CREATE no such leaderboard"})
-    }
-    return res.status(200).json(leaderboard)
+    const leaderboardData  = req.body;
+    const leaderboardId = new mongoose.Types.ObjectId();
+    const leaderboardWithId = { ...leaderboardData, _id: leaderboardId };
+    await Leaderboard.create(leaderboardWithId);
+    res.status(201).json({ createdObjectId: leaderboardId }); // Return the created ObjectId in a JSON object
 }
 
-// delete an leaderboard 
-const deleteLeaderboard = async (req, res) => {
-    const {id} = req.params
-    if (!mongoose.Types.ObjectId.isValid(id)){
-        return res.status(404).json({error: 'DELETE invalid id'})
-    }
-    const leaderboard = await Leaderboard.findOneAndDelete({_id: id})
-    if (!leaderboard) {
-        return res.status(404).json({error: "DELETE no such leaderboard"}) 
-    }
-    res.status(200).json(leaderboard)
-}
+
 // update an leaderboard 
 const updateLeaderboard = async (req, res) => {
-    const {id} = req.params
-    const leaderboard = req.body
+    const leaderboardData = req.body
+    const id = leaderboardData._id
     if (!mongoose.Types.ObjectId.isValid(id)){
-        return res.status(404).json({error: 'UPDATE invalid id'})
+        res.status(404).json({error: 'UPDATE invalid id'})
     }
-    const updatedLeaderboard = await Leaderboard.findOneAndUpdate(
-        { _id: id },
-        { $set: { scores: leaderboard.scores} },
-        { new: true } 
-    ).exec()
-    if (!updatedLeaderboard) {
-        return res.status(404).json({error: "UPDATE no such leaderboard"})
+    const updatedLeaderboardData = await Leaderboard.findOneAndUpdate(
+        { _id: id }, // finds by id
+        { $set: leaderboardData }, // updates everything or jsut the field
+        { new: true } // if returning, it returns updated 
+    ).exec() // executes and returns 
+    if (!updatedLeaderboardData) {
+        res.status(404).json({error: "UPDATE no such leaderboard"})
     }
-    res.status(200).json(updatedLeaderboard)
+    res.status(200).json(updatedLeaderboardData)
 
 }
 
@@ -70,6 +58,5 @@ module.exports = {
     getLeaderboards,
     getLeaderboard,
     createLeaderboard,
-    deleteLeaderboard,
     updateLeaderboard
 }

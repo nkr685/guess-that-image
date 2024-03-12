@@ -16,7 +16,7 @@ import Account from './pages/Account.js';
 // need this extra layer to update category 
 function App() {
   const { user } = useAuthContext()
-  const {category} = useContext(GameContext)
+  const {quiz} = useContext(GameContext)
   return (
     <div className="App">
       <BrowserRouter>
@@ -28,7 +28,7 @@ function App() {
           </Route>
           <Route 
             path = "/game"
-            element={category ? <PlayGame/> : <Navigate to="/"/>}>
+            element={quiz? <PlayGame/> : <Navigate to="/"/>}>
           </Route>
           <Route 
             path = "/login"

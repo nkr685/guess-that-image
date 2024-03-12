@@ -1,252 +1,202 @@
 [
   {
-    "category": "state_maps",
-    "url": "https://geology.com/state-map/maps/alabama-road-map.gif",
-    "name": "Alabama"
+    "imageUrl": "https://geology.com/state-map/maps/alabama-road-map.gif",
+    "imageName": "Alabama"
   },
   {
-    "category": "state_maps",
-    "url": "https://geology.com/state-map/maps/alaska-road-map.gif",
-    "name": "Alaska"
+    "imageUrl": "https://geology.com/state-map/maps/alaska-road-map.gif",
+    "imageName": "Alaska"
   },
   {
-    "category": "state_maps",
-    "url": "https://geology.com/state-map/maps/arizona-road-map.gif",
-    "name": "Arizona"
+    "imageUrl": "https://geology.com/state-map/maps/arizona-road-map.gif",
+    "imageName": "Arizona"
   },
   {
-    "category": "state_maps",
-    "url": "https://geology.com/state-map/maps/arkansas-road-map.gif",
-    "name": "Arkansas"
+    "imageUrl": "https://geology.com/state-map/maps/arkansas-road-map.gif",
+    "imageName": "Arkansas"
   },
   {
-    "category": "state_maps",
-    "url": "https://geology.com/state-map/maps/california-road-map.gif",
-    "name": "California"
+    "imageUrl": "https://geology.com/state-map/maps/california-road-map.gif",
+    "imageName": "California"
   },
   {
-    "category": "state_maps",
-    "url": "https://geology.com/state-map/maps/colorado-road-map.gif",
-    "name": "Colorado"
+    "imageUrl": "https://geology.com/state-map/maps/colorado-road-map.gif",
+    "imageName": "Colorado"
   },
   {
-    "category": "state_maps",
-    "url": "https://geology.com/state-map/maps/connecticut-road-map.gif",
-    "name": "Connecticut"
+    "imageUrl": "https://geology.com/state-map/maps/connecticut-road-map.gif",
+    "imageName": "Connecticut"
   },
   {
-    "category": "state_maps",
-    "url": "https://geology.com/state-map/maps/delaware-road-map.gif",
-    "name": "Delaware"
+    "imageUrl": "https://geology.com/state-map/maps/delaware-road-map.gif",
+    "imageName": "Delaware"
   },
   {
-    "category": "state_maps",
-    "url": "https://geology.com/state-map/maps/florida-road-map.gif",
-    "name": "Florida"
+    "imageUrl": "https://geology.com/state-map/maps/florida-road-map.gif",
+    "imageName": "Florida"
   },
   {
-    "category": "state_maps",
-    "url": "https://geology.com/state-map/maps/georgia-road-map.gif",
-    "name": "Georgia"
+    "imageUrl": "https://geology.com/state-map/maps/georgia-road-map.gif",
+    "imageName": "Georgia"
   },
   {
-    "category": "state_maps",
-    "url": "https://geology.com/state-map/maps/hawaii-road-map.gif",
-    "name": "Hawaii"
+    "imageUrl": "https://geology.com/state-map/maps/hawaii-road-map.gif",
+    "imageName": "Hawaii"
   },
   {
-    "category": "state_maps",
-    "url": "https://geology.com/state-map/maps/idaho-road-map.gif",
-    "name": "Idaho"
+    "imageUrl": "https://geology.com/state-map/maps/idaho-road-map.gif",
+    "imageName": "Idaho"
   },
   {
-    "category": "state_maps",
-    "url": "https://geology.com/state-map/maps/illinois-road-map.gif",
-    "name": " Illinois"
+    "imageUrl": "https://geology.com/state-map/maps/illinois-road-map.gif",
+    "imageName": " Illinois"
   },
   {
-    "category": "state_maps",
-    "url": "https://geology.com/state-map/maps/indiana-road-map.gif",
-    "name": "Indiana"
+    "imageUrl": "https://geology.com/state-map/maps/indiana-road-map.gif",
+    "imageName": "Indiana"
   },
   {
-    "category": "state_maps",
-    "url": "https://geology.com/state-map/maps/iowa-road-map.gif",
-    "name": "Iowa"
+    "imageUrl": "https://geology.com/state-map/maps/iowa-road-map.gif",
+    "imageName": "Iowa"
   },
   {
-    "category": "state_maps",
-    "url": "https://geology.com/state-map/maps/kansas-road-map.gif",
-    "name": "Kansas"
+    "imageUrl": "https://geology.com/state-map/maps/kansas-road-map.gif",
+    "imageName": "Kansas"
   },
   {
-    "category": "state_maps",
-    "url": "https://geology.com/state-map/maps/kentucky-road-map.gif",
-    "name": "Kentucky"
+    "imageUrl": "https://geology.com/state-map/maps/kentucky-road-map.gif",
+    "imageName": "Kentucky"
   },
   {
-    "category": "state_maps",
-    "url": "https://geology.com/state-map/maps/louisiana-road-map.gif",
-    "name": "Louisiana"
+    "imageUrl": "https://geology.com/state-map/maps/louisiana-road-map.gif",
+    "imageName": "Louisiana"
   },
   {
-    "category": "state_maps",
-    "url": "https://geology.com/state-map/maps/maine-road-map.gif",
-    "name": "Maine"
+    "imageUrl": "https://geology.com/state-map/maps/maine-road-map.gif",
+    "imageName": "Maine"
   },
   {
-    "category": "state_maps",
-    "url": "https://geology.com/state-map/maps/maryland-road-map.gif",
-    "name": "Maryland"
+    "imageUrl": "https://geology.com/state-map/maps/maryland-road-map.gif",
+    "imageName": "Maryland"
   },
   {
-    "category": "state_maps",
-    "url": "https://geology.com/state-map/maps/massachusetts-road-map.gif",
-    "name": "Massachusetts"
+    "imageUrl": "https://geology.com/state-map/maps/massachusetts-road-map.gif",
+    "imageName": "Massachusetts"
   },
   {
-    "category": "state_maps",
-    "url": "https://geology.com/state-map/maps/michigan-road-map.gif",
-    "name": "Michigan"
+    "imageUrl": "https://geology.com/state-map/maps/michigan-road-map.gif",
+    "imageName": "Michigan"
   },
   {
-    "category": "state_maps",
-    "url": "https://geology.com/state-map/maps/minnesota-road-map.gif",
-    "name": "Minnesota"
+    "imageUrl": "https://geology.com/state-map/maps/minnesota-road-map.gif",
+    "imageName": "Minnesota"
   },
   {
-    "category": "state_maps",
-    "url": "https://geology.com/state-map/maps/mississippi-road-map.gif",
-    "name": "Mississippi"
+    "imageUrl": "https://geology.com/state-map/maps/mississippi-road-map.gif",
+    "imageName": "Mississippi"
   },
   {
-    "category": "state_maps",
-    "url": "https://geology.com/state-map/maps/missouri-road-map.gif",
-    "name": "Missouri"
+    "imageUrl": "https://geology.com/state-map/maps/missouri-road-map.gif",
+    "imageName": "Missouri"
   },
   {
-    "category": "state_maps",
-    "url": "https://geology.com/state-map/maps/montana-road-map.gif",
-    "name": "Montana"
+    "imageUrl": "https://geology.com/state-map/maps/montana-road-map.gif",
+    "imageName": "Montana"
   },
   {
-    "category": "state_maps",
-    "url": "https://geology.com/state-map/maps/nebraska-road-map.gif",
-    "name": "Nebraska"
+    "imageUrl": "https://geology.com/state-map/maps/nebraska-road-map.gif",
+    "imageName": "Nebraska"
   },
   {
-    "category": "state_maps",
-    "url": "https://geology.com/state-map/maps/nevada-road-map.gif",
-    "name": "Nevada"
+    "imageUrl": "https://geology.com/state-map/maps/nevada-road-map.gif",
+    "imageName": "Nevada"
   },
   {
-    "category": "state_maps",
-    "url": "https://geology.com/state-map/maps/new-hampshire-road-map.gif",
-    "name": "New Hampshire"
+    "imageUrl": "https://geology.com/state-map/maps/new-hampshire-road-map.gif",
+    "imageName": "New Hampshire"
   },
   {
-    "category": "state_maps",
-    "url": "https://geology.com/state-map/maps/new-jersey-road-map.gif",
-    "name": "New Jersey"
+    "imageUrl": "https://geology.com/state-map/maps/new-jersey-road-map.gif",
+    "imageName": "New Jersey"
   },
   {
-    "category": "state_maps",
-    "url": "https://geology.com/state-map/maps/new-mexico-road-map.gif",
-    "name": "New Mexico"
+    "imageUrl": "https://geology.com/state-map/maps/new-mexico-road-map.gif",
+    "imageName": "New Mexico"
   },
   {
-    "category": "state_maps",
-    "url": "https://geology.com/state-map/maps/new-york-road-map.gif",
-    "name": "New York"
+    "imageUrl": "https://geology.com/state-map/maps/new-york-road-map.gif",
+    "imageName": "New York"
   },
   {
-    "category": "state_maps",
-    "url": "https://geology.com/state-map/maps/north-carolina-road-map.gif",
-    "name": "North Carolina"
+    "imageUrl": "https://geology.com/state-map/maps/north-carolina-road-map.gif",
+    "imageName": "North Carolina"
   },
   {
-    "category": "state_maps",
-    "url": "https://geology.com/state-map/maps/north-dakota-road-map.gif",
-    "name": "North Dakota"
+    "imageUrl": "https://geology.com/state-map/maps/north-dakota-road-map.gif",
+    "imageName": "North Dakota"
   },
   {
-    "category": "state_maps",
-    "url": "https://geology.com/state-map/maps/ohio-road-map.gif",
-    "name": "Ohio"
+    "imageUrl": "https://geology.com/state-map/maps/ohio-road-map.gif",
+    "imageName": "Ohio"
   },
   {
-    "category": "state_maps",
-    "url": "https://geology.com/state-map/maps/oklahoma-road-map.gif",
-    "name": "Oklahoma"
+    "imageUrl": "https://geology.com/state-map/maps/oklahoma-road-map.gif",
+    "imageName": "Oklahoma"
   },
   {
-    "category": "state_maps",
-    "url": "https://geology.com/state-map/maps/oregon-road-map.gif",
-    "name": "Oregon"
+    "imageUrl": "https://geology.com/state-map/maps/oregon-road-map.gif",
+    "imageName": "Oregon"
   },
   {
-    "category": "state_maps",
-    "url": "https://geology.com/state-map/maps/pennsylvania-road-map.gif",
-    "name": "Pennsylvania"
+    "imageUrl": "https://geology.com/state-map/maps/pennsylvania-road-map.gif",
+    "imageName": "Pennsylvania"
   },
   {
-    "category": "state_maps",
-    "url": "https://geology.com/state-map/maps/rhode-island-road-map.gif",
-    "name": "Rhode Island"
+    "imageUrl": "https://geology.com/state-map/maps/rhode-island-road-map.gif",
+    "imageName": "Rhode Island"
   },
   {
-    "category": "state_maps",
-    "url": "https://geology.com/state-map/maps/south-carolina-road-map.gif",
-    "name": "South Carolina"
+    "imageUrl": "https://geology.com/state-map/maps/south-carolina-road-map.gif",
+    "imageName": "South Carolina"
   },
   {
-    "category": "state_maps",
-    "url": "https://geology.com/state-map/maps/south-dakota-road-map.gif",
-    "name": "South Dakota"
+    "imageUrl": "https://geology.com/state-map/maps/south-dakota-road-map.gif",
+    "imageName": "South Dakota"
   },
   {
-    "category": "state_maps",
-    "url": "https://geology.com/state-map/maps/tennessee-road-map.gif",
-    "name": "Tennessee"
+    "imageUrl": "https://geology.com/state-map/maps/tennessee-road-map.gif",
+    "imageName": "Tennessee"
   },
   {
-    "category": "state_maps",
-    "url": "https://geology.com/state-map/maps/texas-road-map.gif",
-    "name": "Texas"
+    "imageUrl": "https://geology.com/state-map/maps/texas-road-map.gif",
+    "imageName": "Texas"
   },
   {
-    "category": "state_maps",
-    "url": "https://geology.com/state-map/maps/utah-road-map.gif",
-    "name": "Utah"
+    "imageUrl": "https://geology.com/state-map/maps/utah-road-map.gif",
+    "imageName": "Utah"
   },
   {
-    "category": "state_maps",
-    "url": "https://geology.com/state-map/maps/vermont-road-map.gif",
-    "name": "Vermont"
+    "imageUrl": "https://geology.com/state-map/maps/vermont-road-map.gif",
+    "imageName": "Vermont"
   },
   {
-    "category": "state_maps",
-    "url": "https://geology.com/state-map/maps/virginia-road-map.gif",
-    "name": "Virginia"
+    "imageUrl": "https://geology.com/state-map/maps/virginia-road-map.gif",
+    "imageName": "Virginia"
   },
   {
-    "category": "state_maps",
-    "url": "https://geology.com/state-map/maps/washington-road-map.gif",
-    "name": "Washington"
+    "imageUrl": "https://geology.com/state-map/maps/washington-road-map.gif",
+    "imageName": "Washington"
   },
   {
-    "category": "state_maps",
-    "url": "https://geology.com/state-map/maps/west-virginia-road-map.gif",
-    "name": "West Virginia"
+    "imageUrl": "https://geology.com/state-map/maps/west-virginia-road-map.gif",
+    "imageName": "West Virginia"
   },
   {
-    "category": "state_maps",
-    "url": "https://geology.com/state-map/maps/wisconsin-road-map.gif",
-    "name": "Wisconsin"
+    "imageUrl": "https://geology.com/state-map/maps/wisconsin-road-map.gif",
+    "imageName": "Wisconsin"
   },
   {
-    "category": "state_maps",
-    "url": "https://geology.com/state-map/maps/wyoming-road-map.gif",
-    "name": "Wyoming"
+    "imageUrl": "https://geology.com/state-map/maps/wyoming-road-map.gif",
+    "imageName": "Wyoming"
   }
 ]

@@ -1,73 +1,63 @@
 import { useState, useEffect, useContext } from 'react';
 import { GameContext } from '../context/GameContext';
-import Board from '../components/Board';
+import Board from '../games/gameMode1';
 import { useAuthContext } from '../hooks/useAuthContext';
 import { useLeaderboard } from '../hooks/useLeaderboard';
-import { useSubmitScore } from '../hooks/useSubmitScore';
+import { useImage } from '../hooks/useImage';
 
 const PlayGame = () => {
     // global vars
-    const {category, gameActive, played, score, setScore, togglePlayed} = useContext(GameContext)
+    const {quiz, setQuiz} = useContext(GameContext)
 
     // local vars
     const [imageUrls, setImageUrls] = useState(null)
-    const { user } = useAuthContext()
-    const {getLeaderboard, setLeaderboard, leaderboard} = useLeaderboard()
-    const {submitScore} = useSubmitScore()
+    const [firstPlay, setFirstPlay] = useState(false)
 
+    // hooks
+    const {user} = useAuthContext()
+    const {getAllImages} = useImage()
+    const {getLeaderboardByID, updateLeaderboard} = useLeaderboard()
 
-
-
-    // GET IMAGES FROM DATABASE BEFORE RUNNING APP!!!!
+    // gets images when first rendering
     useEffect(() => {
-        const fetchImageUrls = async()=> {
-            const response = await fetch(`api/ImageUrls?category=${category}`) // http://localhost:4000 REMOVED AFTER ADDING PROXY
-            const json = await response.json()
-            if (response.ok) {
-                setImageUrls(json)
+        if (!quiz || Object.keys(quiz).length === 0) { // used for refreshes
+            const str = sessionStorage.getItem('quiz')
+            if (str) {
+                const json = JSON.parse(str)
+                setQuiz(json)            
             }
         }
-
-        fetchImageUrls()
-    }, [category, setImageUrls])
-
-    useEffect(() => {
-        if (!user) {
-            setScore(0)
+        const fetchImageUrls = async()=> {
+            if (quiz && quiz.imageIDs) {
+                const imageJson = await getAllImages(quiz.imageIDs)
+                setImageUrls(imageJson)                
+            }
         }
-        if (!gameActive && played && user && score > 0) {
-            const check = async () => {
-                const id = "65e552083290768bee57a9a9";
-                await getLeaderboard(id)
-            };
-        
-            check();
-          }
-    }, [gameActive])
+        fetchImageUrls()
+    }, [quiz])
 
-    useEffect(() => {
-        if (leaderboard && leaderboard.hasOwnProperty('_id')) {
-            const check = async () => {
-                const entry = {user: user.username, score}
-                const existingUserIndex = leaderboard.scores.findIndex((score) => score.user === user.username)
-                if (existingUserIndex === -1 || entry.score > leaderboard.scores[existingUserIndex].score) {
-                    const scores = [...leaderboard.scores]
-                    if (existingUserIndex !== -1) {
-                      scores.splice(existingUserIndex, 1);
-                    }                  
-                    scores.push(entry)
-                    const updatedLeaderboard = {...leaderboard,scores: scores}
-                    await submitScore(updatedLeaderboard)
-                    setLeaderboard(null)
-                    setScore(0)
-                    togglePlayed() //???
-                  }
-            };
-        
-            check();
-          }
-    }, [leaderboard])
 
+    const handleSubmitScore = (score) => {
+        if (user && firstPlay) {
+            const submitScore = async () => {
+                const leaderboard = await getLeaderboardByID(quiz.leaderboardID)
+                if (leaderboard) {
+                    const entry = {username: user.username, score}
+                    const existingUserIndex = leaderboard.scores.findIndex((score) => score.username === user.username) // finds previous user entry if exists
+                    if (existingUserIndex === -1 || entry.score > leaderboard.scores[existingUserIndex].score) { // runs only if user entry doesnt exist or cur is higher than prev
+                        const scores = [...leaderboard.scores]
+                        if (existingUserIndex !== -1) { // removes previous user score if exists
+                            scores.splice(existingUserIndex, 1);
+                        }     
+                        scores.push(entry)
+                        const newLeaderboard = {...leaderboard,scores: scores}
+                        await updateLeaderboard(newLeaderboard)
+                    }                    
+                }
+            }
+            submitScore()
+        }
+    }
 
     // returns loading screen until database loaded
     if (!imageUrls || imageUrls.length === 0) {
@@ -82,7 +72,7 @@ const PlayGame = () => {
     
     return (
         <header className="App-header">
-            <Board imageUrls={imageUrls}/>
+            <Board quizName={quiz.quizName} imageUrls={imageUrls} submitScore={handleSubmitScore} firstPlay={firstPlay} setFirstPlay={setFirstPlay}/>
         </header>
     )
 }

@@ -1,12 +1,10 @@
-import { useContext, useEffect, useState } from "react";
-import { GameContext } from "../../context/GameContext";
+import { useEffect, useState } from "react";
 
-const Timer = () => {
-    // global vars
-    const { gameActive, toggleGameState } = useContext(GameContext)
+const Timer = (props) => {
+    // properties
+    const { gameActive, setGameState, startTime } = props
 
     // local vars
-    const startTime = 30; // can add to GameContext later
     const milliSecValue = .1 // used to subtract current time, both technically should be same but idk
     const milliSecTime = 100; // used for interval in setInterval, if you use 1000ms, text wont update as fast and you see it when you type/interact
     const [currentTime, setCurrentTime] = useState(startTime)
@@ -31,7 +29,7 @@ const Timer = () => {
                 setCurrentTime(startTime)
                 setTimerText(`${Math.floor(currentTime)+1}s`)
                 setProgress(100)
-                toggleGameState()
+                setGameState(false)
             }
         } else {
             setIsAlmostEndTime(false)
@@ -41,9 +39,7 @@ const Timer = () => {
             setProgress(100)
         }
     }, [gameActive, currentTime]);
-    // return (
-    //     <div className="timer">{timerText}</div>
-    // );
+
     return (
         <div className="progress-bar" style={{ width: '100%' }}>
             <div className={`progress-bar-inner ${isHalfTime ? (isAlmostEndTime ? 'red' : 'yellow') : 'green'}`} style={{ width: `${progress}%` }}>

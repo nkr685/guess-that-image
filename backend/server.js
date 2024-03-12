@@ -1,20 +1,23 @@
 require('dotenv').config() // calls .env file 
 const express = require('express')
 const mongoose = require('mongoose')
-const imageUrlRoutes = require('./routes/imageUrls.js')
-const userRoutes = require('./routes/users.js')
-const categoryRoutes = require('./routes/categories.js')
-const leaderboardRoutes = require('./routes/leaderboard.js')
+const categoryRoutes = require('./routes/categoryRoutes.js')
+const quizRoutes = require('./routes/quizRoutes.js')
+const imageRoutes = require('./routes/imageRoutes.js')
+const leaderboardRoutes = require('./routes/leaderboardRoutes.js')
+const userRoutes = require('./routes/userRoutes.js')
 
 // starts express and uses json format
 const app = express()
-app.use(express.json())
+app.use(express.json({ limit: '10mb' })) // fixes large payload error
 
 //grabs all routes and attaches it to express
-app.use('/api/ImageUrls', imageUrlRoutes)
-app.use('/api/Users', userRoutes)
 app.use('/api/Categories', categoryRoutes)
-app.use('/api/Leaderboard', leaderboardRoutes)
+app.use('/api/Quizzes', quizRoutes)
+app.use('/api/Images', imageRoutes)
+app.use('/api/Leaderboards', leaderboardRoutes)
+app.use('/api/Users', userRoutes)
+
 
 // connects to db with mongoose to enforce schema
 mongoose.connect(process.env.MONGO_URI, {dbName: 'GuessThatImage'}) 

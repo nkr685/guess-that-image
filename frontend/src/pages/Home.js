@@ -1,31 +1,49 @@
 import { useState, useEffect, useContext } from 'react';
 import Card from '../components/Card';
 import { GameContext } from '../context/GameContext';
+import { useCategory } from '../hooks/useCategory';
+import { useQuiz } from '../hooks/useQuiz';
 
 const Home = () => {
-    // global vars
-    const   {     
-      setCategory, setCategoryName
-      } = useContext(GameContext)
+    // // global vars
+    const {setQuiz} = useContext(GameContext)
 
     // local vars
     const [categories, setCategories] = useState(null)
+    const [quizzes, setQuizzes] = useState(null)
 
+    // hooks
+    const { getAllCategories } = useCategory()    
+    const { getAllQuizzes } = useQuiz()
+
+    useEffect(() => {
+        const fetchQuizzes = async()=> {
+            const json = await getAllQuizzes()
+            if (json) {
+                const quizzesDict = json.reduce((newDict, quiz) => { // turns array into dict for easier indexing
+                    newDict[quiz._id] = quiz;
+                    return newDict;
+                }, {} )
+                setQuizzes(quizzesDict)
+            }
+        }
+        if (!quizzes) {
+            fetchQuizzes()
+        }
+    }, [quizzes])
 
     useEffect(() => {
         const fetchCategories = async()=> {
-            const response = await fetch(`api/Categories`) // http://localhost:4000 REMOVED AFTER ADDING PROXY
-            const json = await response.json()
-            if (response.ok) {
-                setCategories(json)
-            }
+            const json = await getAllCategories()
+            setCategories(json)
         }
-
-        fetchCategories()
+        if (!categories) {
+            fetchCategories()
+        }
     }, [categories])
 
     // returns loading screen until database loaded
-    if (!categories || categories.length === 0) {
+    if (!categories || !quizzes || categories.length === 0) {
         return (
         <div className="Loading-header">
             <header >
@@ -35,25 +53,25 @@ const Home = () => {
         );
     }
 
-    const handleCardClick = (item) => {
-      setCategory(item.dataset)
-      setCategoryName(item.name)
+    const handleCardClick = (_quiz) => {
+        setQuiz(_quiz)
+        sessionStorage.setItem('quiz', JSON.stringify(_quiz))
     }
 
     return (
         <div className='home'>
-          {categories.map((category, idx1) => (
+        {categories.map((category, idx1) => (
             <div key={idx1}>
-              <h2 style={{fontSize: 30}}>{category.category}</h2>
-              <div className="card-container">
-                {category.quiz.map((item, idx2) => (
-                  <Card key={idx2} title={item.name} thumbnail={item.thumbnail} linkTo="/game" onClick={()=> handleCardClick(item)}/>
+            <h2 style={{fontSize: 30}}>{category.categoryName}</h2>
+            <div className="card-container">
+                {category.quizIDs.map((quizID, idx2) => (
+                <Card key={idx2} title={quizzes[quizID].quizName} thumbnail={quizzes[quizID].thumbnailUrl} linkTo="/game" onClick={()=> handleCardClick(quizzes[quizID])}/>
                 ))}
-              </div>
             </div>
-          ))}
+            </div>
+        ))}
         </div>
-      );
+    );
 }
 
 export default Home

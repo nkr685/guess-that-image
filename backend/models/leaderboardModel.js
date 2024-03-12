@@ -2,19 +2,26 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
 // schema for in db
-const leaderboardSchema = new Schema({
-    dataset: {
+const scoreSchema = new Schema({
+    username: {
         type: String,
         required: true
     },
-    name: {
+    score: {
+        type: Number,
+        required: true
+    }
+}, { _id: false })
+
+const leaderboardSchema = new Schema({
+    quizName: {
         type: String,
         required: true
     },
     scores: {
-        type: Array,
+        type: [scoreSchema],
         required: true
     }
-}, {collection: 'Leaderboard'})
+}, {collection: 'Leaderboards'})
 
 module.exports = mongoose.model('Leaderboard', leaderboardSchema)

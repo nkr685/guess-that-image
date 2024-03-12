@@ -15,21 +15,27 @@ const Signup = () => {
     return (
         <form className="signup" onSubmit={handleSubmit}>
             <h3>Signup</h3>
+            <div>
+                <label>Username:</label>
+                <input
+                    type="username"
+                    onChange={(e) => setUsername(e.target.value)}
+                    value={username}
+                />                
+            </div>
+            <div>
+                <label>Password:</label>
+                <input
+                    type="password"
+                    onChange={(e) => setPassword(e.target.value)}
+                    value={password}
+                />                
+            </div>
+            <div>
+                <button disabled={isLoading}>Signup</button>
+                {error && <div className="error">{error}</div>}                
+            </div>
 
-            <label>Username:</label>
-            <input
-                type="username"
-                onChange={(e) => setUsername(e.target.value)}
-                value={username}
-            />
-            <label>Password:</label>
-            <input
-                type="password"
-                onChange={(e) => setPassword(e.target.value)}
-                value={password}
-            />
-            <button disabled={isLoading}>Signup</button>
-            {error && <div className="error">{error}</div>}
         </form>
     )
 

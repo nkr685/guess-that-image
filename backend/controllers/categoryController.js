@@ -1,31 +1,49 @@
 const Category = require('../models/categoryModel.js')
 const mongoose = require('mongoose')
 
-// get all image urls
-const getCategories = async (req, res, db) => {
+// get all categories
+const getCategories = async (req, res) => {
     try {
         const categories = await Category.find({});
     
-        res.status(200).json(categories);
+        return res.status(200).json(categories);
     } catch (error) {
-        res.status(500).json({error: 'GETALL Cant find categories'});
+        return res.status(500).json({error: 'GETALL Cant find categories'});
       }
 }
 
-// get a single image url
-const getCategory = async (req, res) => {
-    const {id} = req.params
-    if (!mongoose.Types.ObjectId.isValid(id)){
-        return res.status(404).json({error: 'GET invalid id'})
+// create a new category
+const createCategory = async (req, res) => {
+    const categoryData  = req.body;
+    delete categoryData._id
+    await Category.create(categoryData);
+    res.status(201).json(); // Return the created ObjectId in a JSON object
+}
+
+// update an existing category
+const updateCategory = async (req, res) => {
+    try {
+        const { _id, quizIDs } = req.body; // category name is included but will never change
+        const updatedCategory = await Category.findOneAndUpdate(
+            { _id }, // searches by id
+            { quizIDs: quizIDs},
+            { new: true } // returns updated doc
+        )
+            
+        // checks if updated
+        if (!updatedCategory) {
+            res.status(404).json({ error: 'Category not found' });
+        }
+
+        res.status(200).json(updatedCategory);
+    } catch (error) {
+        console.error('Error updating category:', error);
+        res.status(500).json({ error: 'Internal Server Error' });
     }
-    const category = await Category.findById(id)
-    if (!category) {
-        return res.status(404).json({error: "GET no such category"})
-    }
-    return res.status(200).json(category)
 }
 
 module.exports = {
     getCategories,
-    getCategory
+    createCategory,
+    updateCategory
 }

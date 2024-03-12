@@ -1,152 +1,122 @@
 [
   {
-    "category": "nba",
-    "url": "https://cdn.nba.com/logos/nba/1610612738/primary/L/logo.svg",
-    "name": "Boston Celtics Logo"
+    "imageUrl": "https://cdn.nba.com/logos/nba/1610612738/primary/L/logo.svg",
+    "imageName": "Boston Celtics Logo"
   },
   {
-    "category": "nba",
-    "url": "https://cdn.nba.com/logos/nba/1610612751/primary/L/logo.svg",
-    "name": "Brooklyn Nets Logo"
+    "imageUrl": "https://cdn.nba.com/logos/nba/1610612751/primary/L/logo.svg",
+    "imageName": "Brooklyn Nets Logo"
   },
   {
-    "category": "nba",
-    "url": "https://cdn.nba.com/logos/nba/1610612752/primary/L/logo.svg",
-    "name": "New York Knicks Logo"
+    "imageUrl": "https://cdn.nba.com/logos/nba/1610612752/primary/L/logo.svg",
+    "imageName": "New York Knicks Logo"
   },
   {
-    "category": "nba",
-    "url": "https://cdn.nba.com/logos/nba/1610612755/primary/L/logo.svg",
-    "name": "Philadelphia 76ers Logo"
+    "imageUrl": "https://cdn.nba.com/logos/nba/1610612755/primary/L/logo.svg",
+    "imageName": "Philadelphia 76ers Logo"
   },
   {
-    "category": "nba",
-    "url": "https://cdn.nba.com/logos/nba/1610612761/primary/L/logo.svg",
-    "name": "Toronto Raptors Logo"
+    "imageUrl": "https://cdn.nba.com/logos/nba/1610612761/primary/L/logo.svg",
+    "imageName": "Toronto Raptors Logo"
   },
   {
-    "category": "nba",
-    "url": "https://cdn.nba.com/logos/nba/1610612741/primary/L/logo.svg",
-    "name": "Chicago Bulls Logo"
+    "imageUrl": "https://cdn.nba.com/logos/nba/1610612741/primary/L/logo.svg",
+    "imageName": "Chicago Bulls Logo"
   },
   {
-    "category": "nba",
-    "url": "https://cdn.nba.com/logos/nba/1610612739/primary/L/logo.svg",
-    "name": "Cleveland Cavaliers Logo"
+    "imageUrl": "https://cdn.nba.com/logos/nba/1610612739/primary/L/logo.svg",
+    "imageName": "Cleveland Cavaliers Logo"
   },
   {
-    "category": "nba",
-    "url": "https://cdn.nba.com/logos/nba/1610612765/primary/L/logo.svg",
-    "name": "Detroit Pistons Logo"
+    "imageUrl": "https://cdn.nba.com/logos/nba/1610612765/primary/L/logo.svg",
+    "imageName": "Detroit Pistons Logo"
   },
   {
-    "category": "nba",
-    "url": "https://cdn.nba.com/logos/nba/1610612754/primary/L/logo.svg",
-    "name": "Indiana Pacers Logo"
+    "imageUrl": "https://cdn.nba.com/logos/nba/1610612754/primary/L/logo.svg",
+    "imageName": "Indiana Pacers Logo"
   },
   {
-    "category": "nba",
-    "url": "https://cdn.nba.com/logos/nba/1610612749/primary/L/logo.svg",
-    "name": "Milwaukee Bucks Logo"
+    "imageUrl": "https://cdn.nba.com/logos/nba/1610612749/primary/L/logo.svg",
+    "imageName": "Milwaukee Bucks Logo"
   },
   {
-    "category": "nba",
-    "url": "https://cdn.nba.com/logos/nba/1610612737/primary/L/logo.svg",
-    "name": "Atlanta Hawks Logo"
+    "imageUrl": "https://cdn.nba.com/logos/nba/1610612737/primary/L/logo.svg",
+    "imageName": "Atlanta Hawks Logo"
   },
   {
-    "category": "nba",
-    "url": "https://cdn.nba.com/logos/nba/1610612766/primary/L/logo.svg",
-    "name": "Charlotte Hornets Logo"
+    "imageUrl": "https://cdn.nba.com/logos/nba/1610612766/primary/L/logo.svg",
+    "imageName": "Charlotte Hornets Logo"
   },
   {
-    "category": "nba",
-    "url": "https://cdn.nba.com/logos/nba/1610612748/primary/L/logo.svg",
-    "name": "Miami Heat Logo"
+    "imageUrl": "https://cdn.nba.com/logos/nba/1610612748/primary/L/logo.svg",
+    "imageName": "Miami Heat Logo"
   },
   {
-    "category": "nba",
-    "url": "https://cdn.nba.com/logos/nba/1610612753/primary/L/logo.svg",
-    "name": "Orlando Magic Logo"
+    "imageUrl": "https://cdn.nba.com/logos/nba/1610612753/primary/L/logo.svg",
+    "imageName": "Orlando Magic Logo"
   },
   {
-    "category": "nba",
-    "url": "https://cdn.nba.com/logos/nba/1610612764/primary/L/logo.svg",
-    "name": "Washington Wizards Logo"
+    "imageUrl": "https://cdn.nba.com/logos/nba/1610612764/primary/L/logo.svg",
+    "imageName": "Washington Wizards Logo"
   },
   {
-    "category": "nba",
-    "url": "https://cdn.nba.com/logos/nba/1610612743/primary/L/logo.svg",
-    "name": "Denver Nuggets Logo"
+    "imageUrl": "https://cdn.nba.com/logos/nba/1610612743/primary/L/logo.svg",
+    "imageName": "Denver Nuggets Logo"
   },
   {
-    "category": "nba",
-    "url": "https://cdn.nba.com/logos/nba/1610612750/primary/L/logo.svg",
-    "name": "Minnesota Timberwolves Logo"
+    "imageUrl": "https://cdn.nba.com/logos/nba/1610612750/primary/L/logo.svg",
+    "imageName": "Minnesota Timberwolves Logo"
   },
   {
-    "category": "nba",
-    "url": "https://cdn.nba.com/logos/nba/1610612760/primary/L/logo.svg",
-    "name": "Oklahoma City Thunder Logo"
+    "imageUrl": "https://cdn.nba.com/logos/nba/1610612760/primary/L/logo.svg",
+    "imageName": "Oklahoma City Thunder Logo"
   },
   {
-    "category": "nba",
-    "url": "https://cdn.nba.com/logos/nba/1610612757/primary/L/logo.svg",
-    "name": "Portland Trail Blazers Logo"
+    "imageUrl": "https://cdn.nba.com/logos/nba/1610612757/primary/L/logo.svg",
+    "imageName": "Portland Trail Blazers Logo"
   },
   {
-    "category": "nba",
-    "url": "https://cdn.nba.com/logos/nba/1610612762/primary/L/logo.svg",
-    "name": "Utah Jazz Logo"
+    "imageUrl": "https://cdn.nba.com/logos/nba/1610612762/primary/L/logo.svg",
+    "imageName": "Utah Jazz Logo"
   },
   {
-    "category": "nba",
-    "url": "https://cdn.nba.com/logos/nba/1610612744/primary/L/logo.svg",
-    "name": "Golden State Warriors Logo"
+    "imageUrl": "https://cdn.nba.com/logos/nba/1610612744/primary/L/logo.svg",
+    "imageName": "Golden State Warriors Logo"
   },
   {
-    "category": "nba",
-    "url": "https://cdn.nba.com/logos/nba/1610612746/primary/L/logo.svg",
-    "name": "LA Clippers Logo"
+    "imageUrl": "https://cdn.nba.com/logos/nba/1610612746/primary/L/logo.svg",
+    "imageName": "LA Clippers Logo"
   },
   {
-    "category": "nba",
-    "url": "https://cdn.nba.com/logos/nba/1610612747/primary/L/logo.svg",
-    "name": "Los Angeles Lakers Logo"
+    "imageUrl": "https://cdn.nba.com/logos/nba/1610612747/primary/L/logo.svg",
+    "imageName": "Los Angeles Lakers Logo"
   },
   {
-    "category": "nba",
-    "url": "https://cdn.nba.com/logos/nba/1610612756/primary/L/logo.svg",
-    "name": "Phoenix Suns Logo"
+    "imageUrl": "https://cdn.nba.com/logos/nba/1610612756/primary/L/logo.svg",
+    "imageName": "Phoenix Suns Logo"
   },
   {
-    "category": "nba",
-    "url": "https://cdn.nba.com/logos/nba/1610612758/primary/L/logo.svg",
-    "name": "Sacramento Kings Logo"
+    "imageUrl": "https://cdn.nba.com/logos/nba/1610612758/primary/L/logo.svg",
+    "imageName": "Sacramento Kings Logo"
   },
   {
-    "category": "nba",
-    "url": "https://cdn.nba.com/logos/nba/1610612742/primary/L/logo.svg",
-    "name": "Dallas Mavericks Logo"
+    "imageUrl": "https://cdn.nba.com/logos/nba/1610612742/primary/L/logo.svg",
+    "imageName": "Dallas Mavericks Logo"
   },
   {
-    "category": "nba",
-    "url": "https://cdn.nba.com/logos/nba/1610612745/primary/L/logo.svg",
-    "name": "Houston Rockets Logo"
+    "imageUrl": "https://cdn.nba.com/logos/nba/1610612745/primary/L/logo.svg",
+    "imageName": "Houston Rockets Logo"
   },
   {
-    "category": "nba",
-    "url": "https://cdn.nba.com/logos/nba/1610612763/primary/L/logo.svg",
-    "name": "Memphis Grizzlies Logo"
+    "imageUrl": "https://cdn.nba.com/logos/nba/1610612763/primary/L/logo.svg",
+    "imageName": "Memphis Grizzlies Logo"
   },
   {
-    "category": "nba",
-    "url": "https://cdn.nba.com/logos/nba/1610612740/primary/L/logo.svg",
-    "name": "New Orleans Pelicans Logo"
+    "imageUrl": "https://cdn.nba.com/logos/nba/1610612740/primary/L/logo.svg",
+    "imageName": "New Orleans Pelicans Logo"
   },
   {
-    "category": "nba",
-    "url": "https://cdn.nba.com/logos/nba/1610612759/primary/L/logo.svg",
-    "name": "San Antonio Spurs Logo"
+    "imageUrl": "https://cdn.nba.com/logos/nba/1610612759/primary/L/logo.svg",
+    "imageName": "San Antonio Spurs Logo"
   }
 ]

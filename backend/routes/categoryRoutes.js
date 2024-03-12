@@ -2,15 +2,19 @@ const express = require('express')
 
 const {
     getCategories,
-    getCategory
+    updateCategory,
+    createCategory
 } = require('../controllers/categoryController.js')
 
 const router = express.Router()
 
-// GET all image urls
+// get all categories
 router.get('/', getCategories) 
 
-// GET a single image url by id
-router.get('/:id', getCategory)
+// create category
+router.post('/', createCategory)
+
+// update category by id
+router.patch('/:id', updateCategory)
 
 module.exports = router

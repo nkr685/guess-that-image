@@ -1,162 +1,130 @@
 [
   {
-    "category": "landmarks",
-    "url": "https://www.usnews.com/object/image/00000169-5e07-df95-a57d-7ec72aae0000/2-angkor-wat-getty.jpg",
-    "name": "Angkor Wat"
+    "imageUrl": "https://www.usnews.com/object/image/00000169-5e07-df95-a57d-7ec72aae0000/2-angkor-wat-getty.jpg",
+    "imageName": "Angkor Wat"
   },
   {
-    "category": "landmarks",
-    "url": "https://www.usnews.com/object/image/00000169-5e07-df95-a57d-7ec72d990000/3-sydney-opera-house-submitted-masaru-kitano-snak-productions-tourism-australia-4.jpg",
-    "name": "Sydney Opera House"
+    "imageUrl": "https://www.usnews.com/object/image/00000169-5e07-df95-a57d-7ec72d990000/3-sydney-opera-house-submitted-masaru-kitano-snak-productions-tourism-australia-4.jpg",
+    "imageName": "Sydney Opera House"
   },
   {
-    "category": "landmarks",
-    "url": "https://www.usnews.com/object/image/00000169-5e06-df95-a57d-7ec6a6c10000/4-eiffel-tower-getty.jpg",
-    "name": "Eiffel Tower"
+    "imageUrl": "https://www.usnews.com/object/image/00000169-5e06-df95-a57d-7ec6a6c10000/4-eiffel-tower-getty.jpg",
+    "imageName": "Eiffel Tower"
   },
   {
-    "category": "landmarks",
-    "url": "https://www.usnews.com/object/image/00000169-5e06-df95-a57d-7ec6abfb0000/5-taj-mahal-getty.jpg",
-    "name": "Taj Mahal"
+    "imageUrl": "https://www.usnews.com/object/image/00000169-5e06-df95-a57d-7ec6abfb0000/5-taj-mahal-getty.jpg",
+    "imageName": "Taj Mahal"
   },
   {
-    "category": "landmarks",
-    "url": "https://www.usnews.com/object/image/00000169-5e06-df95-a57d-7ec6b8380000/machu-picchu-stock.jpg",
-    "name": "Machu Picchu"
+    "imageUrl": "https://www.usnews.com/object/image/00000169-5e06-df95-a57d-7ec6b8380000/machu-picchu-stock.jpg",
+    "imageName": "Machu Picchu"
   },
   {
-    "category": "landmarks",
-    "url": "https://www.usnews.com/object/image/00000169-5e06-df95-a57d-7ec6beae0000/8-great-wall-getty.jpg",
-    "name": "Great Wall of China"
+    "imageUrl": "https://www.usnews.com/object/image/00000169-5e06-df95-a57d-7ec6beae0000/8-great-wall-getty.jpg",
+    "imageName": "Great Wall of China"
   },
   {
-    "category": "landmarks",
-    "url": "https://www.usnews.com/object/image/00000169-5e06-df95-a57d-7ec6c2680000/9-mount-rushmore-getty.jpg",
-    "name": "Mount Rushmore"
+    "imageUrl": "https://www.usnews.com/object/image/00000169-5e06-df95-a57d-7ec6c2680000/9-mount-rushmore-getty.jpg",
+    "imageName": "Mount Rushmore"
   },
   {
-    "category": "landmarks",
-    "url": "https://www.usnews.com/object/image/00000169-5e06-df95-a57d-7ec6c66b0000/10-mont-saint-michel-getty.jpg",
-    "name": "Mont-Saint-Michel"
+    "imageUrl": "https://www.usnews.com/object/image/00000169-5e06-df95-a57d-7ec6c66b0000/10-mont-saint-michel-getty.jpg",
+    "imageName": "Mont-Saint-Michel"
   },
   {
-    "category": "landmarks",
-    "url": "https://www.usnews.com/object/image/00000169-5e06-df95-a57d-7ec6d01b0000/12-acropolis-getty.jpg",
-    "name": "Acropolis"
+    "imageUrl": "https://www.usnews.com/object/image/00000169-5e06-df95-a57d-7ec6d01b0000/12-acropolis-getty.jpg",
+    "imageName": "Acropolis"
   },
   {
-    "category": "landmarks",
-    "url": "https://www.usnews.com/object/image/00000185-cfcb-deea-a3a5-efdf6a050001/the-brandenburg-gate-stock.jpg",
-    "name": "The Brandenburg Gate"
+    "imageUrl": "https://www.usnews.com/object/image/00000185-cfcb-deea-a3a5-efdf6a050001/the-brandenburg-gate-stock.jpg",
+    "imageName": "The Brandenburg Gate"
   },
   {
-    "category": "landmarks",
-    "url": "https://www.usnews.com/object/image/00000169-5e06-df95-a57d-7ec6d4680000/13-easter-island-getty.jpg",
-    "name": "Easter Island"
+    "imageUrl": "https://www.usnews.com/object/image/00000169-5e06-df95-a57d-7ec6d4680000/13-easter-island-getty.jpg",
+    "imageName": "Easter Island"
   },
   {
-    "category": "landmarks",
-    "url": "https://www.usnews.com/object/image/00000169-5e06-df95-a57d-7ec6d9e70000/15-german-castle-getty.jpg",
-    "name": "Neuschwanstein Castle"
+    "imageUrl": "https://www.usnews.com/object/image/00000169-5e06-df95-a57d-7ec6d9e70000/15-german-castle-getty.jpg",
+    "imageName": "Neuschwanstein Castle"
   },
   {
-    "category": "landmarks",
-    "url": "https://www.usnews.com/object/image/00000169-5e06-df95-a57d-7ec6e0e70000/16-leaning-tower-of-pisa-getty.jpg",
-    "name": "Leaning Tower of Pisa"
+    "imageUrl": "https://www.usnews.com/object/image/00000169-5e06-df95-a57d-7ec6e0e70000/16-leaning-tower-of-pisa-getty.jpg",
+    "imageName": "Leaning Tower of Pisa"
   },
   {
-    "category": "landmarks",
-    "url": "https://www.usnews.com/object/image/00000169-5e06-df95-a57d-7ec6e6300000/17-pyramids-getty.jpg",
-    "name": "Pyramids of Giza"
+    "imageUrl": "https://www.usnews.com/object/image/00000169-5e06-df95-a57d-7ec6e6300000/17-pyramids-getty.jpg",
+    "imageName": "Pyramids of Giza"
   },
   {
-    "category": "landmarks",
-    "url": "https://www.usnews.com/object/image/00000169-5e06-df95-a57d-7ec6eaaf0000/18-victoria-falls-getty.jpg",
-    "name": "Victoria Falls"
+    "imageUrl": "https://www.usnews.com/object/image/00000169-5e06-df95-a57d-7ec6eaaf0000/18-victoria-falls-getty.jpg",
+    "imageName": "Victoria Falls"
   },
   {
-    "category": "landmarks",
-    "url": "https://www.usnews.com/object/image/00000169-5e06-df95-a57d-7ec6f94c0000/21-buckingham-palace-getty.jpg",
-    "name": "Buckingham Palace"
+    "imageUrl": "https://www.usnews.com/object/image/00000169-5e06-df95-a57d-7ec6f94c0000/21-buckingham-palace-getty.jpg",
+    "imageName": "Buckingham Palace"
   },
   {
-    "category": "landmarks",
-    "url": "https://www.usnews.com/object/image/00000185-d040-dc6f-abc5-f34f036f0000/la-sagrada-familia-stock.jpg",
-    "name": "Basilica de la Sagrada Familia"
+    "imageUrl": "https://www.usnews.com/object/image/00000185-d040-dc6f-abc5-f34f036f0000/la-sagrada-familia-stock.jpg",
+    "imageName": "Basilica de la Sagrada Familia"
   },
   {
-    "category": "landmarks",
-    "url": "https://www.usnews.com/object/image/00000169-5e07-df95-a57d-7ec702b50000/23-christ-the-redeemer-getty.jpg",
-    "name": "Christ the Redeemer"
+    "imageUrl": "https://www.usnews.com/object/image/00000169-5e07-df95-a57d-7ec702b50000/23-christ-the-redeemer-getty.jpg",
+    "imageName": "Christ the Redeemer"
   },
   {
-    "category": "landmarks",
-    "url": "https://www.usnews.com/object/image/00000169-5e07-df95-a57d-7ec7079c0000/24-blue-mosque-getty.jpg",
-    "name": "Blue Mosque"
+    "imageUrl": "https://www.usnews.com/object/image/00000169-5e07-df95-a57d-7ec7079c0000/24-blue-mosque-getty.jpg",
+    "imageName": "Blue Mosque"
   },
   {
-    "category": "landmarks",
-    "url": "https://www.usnews.com/object/image/00000169-5e07-df95-a57d-7ec70b790000/19030830famouslandmarks-stock.jpg",
-    "name": "Colosseum"
+    "imageUrl": "https://www.usnews.com/object/image/00000169-5e07-df95-a57d-7ec70b790000/19030830famouslandmarks-stock.jpg",
+    "imageName": "Colosseum"
   },
   {
-    "category": "landmarks",
-    "url": "https://www.usnews.com/object/image/00000169-5e07-df95-a57d-7ec70f790000/26-grand-palace-bangkok-getty.jpg",
-    "name": "Grand Palace at night"
+    "imageUrl": "https://www.usnews.com/object/image/00000169-5e07-df95-a57d-7ec70f790000/26-grand-palace-bangkok-getty.jpg",
+    "imageName": "Grand Palace at night"
   },
   {
-    "category": "landmarks",
-    "url": "https://www.usnews.com/object/image/00000169-5e07-df95-a57d-7ec715370000/27-statue-of-liberty-getty.jpg",
-    "name": "The Statue of Liberty"
+    "imageUrl": "https://www.usnews.com/object/image/00000169-5e07-df95-a57d-7ec715370000/27-statue-of-liberty-getty.jpg",
+    "imageName": "The Statue of Liberty"
   },
   {
-    "category": "landmarks",
-    "url": "https://www.usnews.com/object/image/00000169-5e07-df95-a57d-7ec718a40000/28-petra-getty.jpg",
-    "name": "Petra"
+    "imageUrl": "https://www.usnews.com/object/image/00000169-5e07-df95-a57d-7ec718a40000/28-petra-getty.jpg",
+    "imageName": "Petra"
   },
   {
-    "category": "landmarks",
-    "url": "https://www.usnews.com/object/image/00000169-5e07-df95-a57d-7ec71bab0000/29-ha-long-bay-getty.jpg",
-    "name": "Ha Long Bay"
+    "imageUrl": "https://www.usnews.com/object/image/00000169-5e07-df95-a57d-7ec71bab0000/29-ha-long-bay-getty.jpg",
+    "imageName": "Ha Long Bay"
   },
   {
-    "category": "landmarks",
-    "url": "https://www.usnews.com/object/image/00000169-5e07-df95-a57d-7ec71f450000/30-stonehenge-getty.jpg",
-    "name": "Stonehenge"
+    "imageUrl": "https://www.usnews.com/object/image/00000169-5e07-df95-a57d-7ec71f450000/30-stonehenge-getty.jpg",
+    "imageName": "Stonehenge"
   },
   {
-    "category": "landmarks",
-    "url": "https://www.usnews.com/object/image/00000169-5e07-df95-a57d-7ec7267c0000/31-santorini-getty.jpg",
-    "name": "Blue Domes of Oia"
+    "imageUrl": "https://www.usnews.com/object/image/00000169-5e07-df95-a57d-7ec7267c0000/31-santorini-getty.jpg",
+    "imageName": "Blue Domes of Oia"
   },
   {
-    "category": "landmarks",
-    "url": "https://www.usnews.com/object/image/00000185-cfcb-deea-a3a5-efdf6a970000/mount-fuji-stock.jpg",
-    "name": "Mount Fuji"
+    "imageUrl": "https://www.usnews.com/object/image/00000185-cfcb-deea-a3a5-efdf6a970000/mount-fuji-stock.jpg",
+    "imageName": "Mount Fuji"
   },
   {
-    "category": "landmarks",
-    "url": "https://www.usnews.com/object/image/00000185-cfcb-deea-a3a5-efdf6aa60000/potala-palace-stock.jpg",
-    "name": "Potala Palace"
+    "imageUrl": "https://www.usnews.com/object/image/00000185-cfcb-deea-a3a5-efdf6aa60000/potala-palace-stock.jpg",
+    "imageName": "Potala Palace"
   },
   {
-    "category": "landmarks",
-    "url": "https://www.usnews.com/object/image/0000018d-6144-d0f0-a78d-697760fe0000/lake-louise-stock.jpg",
-    "name": "Banff National Park"
+    "imageUrl": "https://www.usnews.com/object/image/0000018d-6144-d0f0-a78d-697760fe0000/lake-louise-stock.jpg",
+    "imageName": "Banff National Park"
   },
   {
-    "category": "landmarks",
-    "url": "https://www.usnews.com/object/image/0000018d-6144-d0f0-a78d-697760e10000/grand-canyon-stock.jpg",
-    "name": "The Grand Canyon"
+    "imageUrl": "https://www.usnews.com/object/image/0000018d-6144-d0f0-a78d-697760e10000/grand-canyon-stock.jpg",
+    "imageName": "The Grand Canyon"
   },
   {
-    "category": "landmarks",
-    "url": "https://www.usnews.com/object/image/0000018d-6144-d0f0-a78d-697760800001/uyuni-salt-flats-stock.jpg",
-    "name": "Uyuni Salt Flats"
+    "imageUrl": "https://www.usnews.com/object/image/0000018d-6144-d0f0-a78d-697760800001/uyuni-salt-flats-stock.jpg",
+    "imageName": "Uyuni Salt Flats"
   },
   {
-    "category": "landmarks",
-    "url": "https://www.usnews.com/object/image/00000171-5a7c-de2f-af7b-5bfe03230000/glacier-national-park-stock.jpg",
-    "name": "Glacier National Park"
+    "imageUrl": "https://www.usnews.com/object/image/00000171-5a7c-de2f-af7b-5bfe03230000/glacier-national-park-stock.jpg",
+    "imageName": "Glacier National Park"
   }
 ]

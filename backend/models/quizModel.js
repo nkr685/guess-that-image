@@ -2,19 +2,23 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
 // schema for image urls in db
-const imageUrlSchema = new Schema({
-    category: {
+const quizSchema = new Schema({
+    quizName: {
         type: String,
         required: true
     },
-    url: {
+    thumbnailUrl: {
         type: String,
         required: true
     },
-    name: {
+    leaderboardID: {
         type: String,
+        required: true
+    },
+    imageIDs: {
+        type: Array,
         required: true
     }
-}, {collection: 'ImageUrls'})
+}, {collection: 'Quizzes'})
 
-module.exports = mongoose.model('ImageUrl', imageUrlSchema)
+module.exports = mongoose.model('Quiz', quizSchema)

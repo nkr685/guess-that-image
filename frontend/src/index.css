@@ -153,7 +153,7 @@ body {
 
 .nav-links button {
   color: white;
-  background-color: #ff0000;
+  background-color: #e74c3c;
   margin: 10;
   border: none;
   border-radius: 5px;
@@ -267,21 +267,19 @@ form.signup button, form.login button {
   width: 150px;
 }
 
-/* Leaderboard *//* Leaderboard Container */
-/* Leaderboard Container */
+/* LEADERBOARD */
+
 .Leaderboard {
   text-align: center;
 }
 
-/* Dropdown Styles */
 .Leaderboard .category-select {
   padding: 5px;
   margin-top: 10px;
 }
 
-/* Table Styles */
 .Leaderboard-table {
-  margin: auto; /* Center the table horizontally */
+  margin: auto;
   width: 80%;
   border-collapse: collapse;
   margin-top: 20px;
@@ -289,83 +287,81 @@ form.signup button, form.login button {
 
 .Leaderboard th,
 .Leaderboard td {
-  padding: 15px; /* Increased padding for better readability */
+  padding: 15px; 
   border: 1px solid #ddd;
   text-align: center;
   position: relative;
-  font-size: 24px; /* Adjusted font size for better readability */
+  font-size: 24px; 
 }
 
 .Leaderboard th {
-  background-color: #333; /* Dark gray header background */
+  background-color: #333;
   color: white;
   font-size: 32px;
 }
 
-/* Alternating Row Colors */
 .Leaderboard tbody tr:nth-child(even) {
-  background-color: #555555; /* Less dark gray for even rows */
+  background-color: #555555; 
 }
 
 .Leaderboard tbody tr:nth-child(odd) {
-  background-color: #444444; /* Even less dark gray for odd rows */
+  background-color: #444444;
 }
-/* Rank Number Styles */
+
 .Leaderboard tbody tr:nth-child(1) td:first-child::before {
   content: attr(data-rank);
   display: block;
-  width: 40px; /* Increased width for better visibility */
-  height: 40px; /* Increased height for better visibility */
+  width: 40px;
+  height: 40px; 
   border-radius: 50%;
-  line-height: 40px; /* Adjusted line height for better visibility */
-  background-color: #ffd700; /* Gold for 1st place */
+  line-height: 40px; 
+  background-color: #ffd700;
   color: #333;
   font-weight: bold;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 2; /* Ensure the rank number is above the cell content */
+  z-index: 2; 
 }
 
 .Leaderboard tbody tr:nth-child(2) td:first-child::before {
   content: attr(data-rank);
   display: block;
-  width: 40px; /* Increased width for better visibility */
-  height: 40px; /* Increased height for better visibility */
+  width: 40px;
+  height: 40px; 
   border-radius: 50%;
-  line-height: 40px; /* Adjusted line height for better visibility */
-  background-color: #c0c0c0; /* Silver for 2nd place */
+  line-height: 40px;
+  background-color: #c0c0c0; 
   color: #333;
   font-weight: bold;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 2; /* Ensure the rank number is above the cell content */
+  z-index: 2;
 }
 
 .Leaderboard tbody tr:nth-child(3) td:first-child::before {
   content: attr(data-rank);
   display: block;
-  width: 40px; /* Increased width for better visibility */
-  height: 40px; /* Increased height for better visibility */
+  width: 40px;
+  height: 40px; 
   border-radius: 50%;
-  line-height: 40px; /* Adjusted line height for better visibility */
-  background-color: #cd7f32; /* Bronze for 3rd place */
+  line-height: 40px; 
+  background-color: #cd7f32; 
   color: #333;
   font-weight: bold;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 2; /* Ensure the rank number is above the cell content */
+  z-index: 2; 
 }
 
-/* Ensure text is visible */
 .Leaderboard tbody td {
   position: relative;
-  z-index: 1; /* Ensure the text is above the pseudo-element */
+  z-index: 1; 
 }
 
 /* ACCOUNT */
@@ -402,14 +398,101 @@ form.signup button, form.login button {
 }
 
 .account-change-password-btn {
-  background-color: #3498db; /* Blue */
+  background-color: #3498db; 
 }
 
 .account-delete-account-btn {
-  background-color: #e74c3c; /* Red */
+  background-color: #e74c3c; 
 }
 
 .account-change-password-btn:hover,
 .account-delete-account-btn:hover {
   background-color: #333;
+}
+
+/* UPLOAD */
+
+.upload-container {
+  font-family: 'Arial', sans-serif;
+  background-color: #282c34;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.upload-form {
+  background-color: #444;
+  color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  width: 80%; 
+  max-width: 1000px;
+  box-sizing: border-box;
+}
+
+.upload-label {
+  display: block;
+  margin-bottom: 8px;
+  color: #fff;
+}
+
+.upload-input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 16px;
+  box-sizing: border-box;
+  border: 1px solid #777;
+  border-radius: 4px;
+  outline: none;
+  background-color: #555;
+  color: #fff;
+}
+
+.upload-file-input {
+  display: none;
+}
+
+.upload-file-label {
+  display: block;
+  background-color: #4caf50;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.upload-file-label:hover {
+  background-color: #45a049;
+}
+
+.upload-button {
+  background-color: #4caf50;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.upload-button:hover {
+  background-color: #45a049;
+}
+
+.upload-pre {
+  background-color: #666;
+  padding: 10px;
+  border-radius: 4px;
+  overflow-x: auto;
+}
+
+.upload-heading {
+  color: #fff;
+  margin-bottom: 12px;
 }
