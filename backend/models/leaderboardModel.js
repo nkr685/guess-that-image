@@ -5,11 +5,11 @@ const Schema = mongoose.Schema
 const scoreSchema = new Schema({
     username: {
         type: String,
-        required: true
+        required: false
     },
     score: {
         type: Number,
-        required: true
+        required: false
     }
 }, { _id: false })
 

@@ -14,8 +14,62 @@ const UserSchema = new Schema({
     password: {
         type: String,
         required: true
+    },
+    profilePic: {
+        type: String,
+        required: false
+    },
+    accountCreationDate: {
+        type: Date,
+        required: true,
+        default: Date.now
+    },
+    bio: {
+        type: String,
+        required: false
+    },
+    achievements: {
+        type: Array,
+        required: false
+    },
+    following: {
+        type: Array,
+        required: false
+    },
+    quizzesCreated:{
+        type: Array,
+        required: false
+    },
+    totalPlays: {
+        type: Number,
+        required: false
+    },
+    quizzesPlayed: {
+        type: Array,
+        required: false
+    }, // best score, best time
+    recentActivity:{
+        type: Array,
+        required: false
+    },
+    bookmarks:{
+        type: Array,
+        required: false
+    }, // date bookmarked
+    likes: {
+        type: Array,
+        required: false
+    }, // date liked
+    comments: {
+        type: Array,
+        required: false
+    },
+    friends: {
+        type: Array,
+        required: false
     }
 }, {collection: 'Users'})
+
 
 // mongoose comes with methods for user auth
 // static signup method

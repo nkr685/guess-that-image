@@ -17,12 +17,13 @@ const createCategory = async (req, res) => {
     const categoryData  = req.body;
     delete categoryData._id
     await Category.create(categoryData);
-    res.status(201).json(); // Return the created ObjectId in a JSON object
+    res.status(201).json({"message":"success"}); // Return the created ObjectId in a JSON object
 }
 
 // update an existing category
 const updateCategory = async (req, res) => {
     try {
+        console.log(req)
         const { _id, quizIDs } = req.body; // category name is included but will never change
         const updatedCategory = await Category.findOneAndUpdate(
             { _id }, // searches by id
@@ -32,13 +33,13 @@ const updateCategory = async (req, res) => {
             
         // checks if updated
         if (!updatedCategory) {
-            res.status(404).json({ error: 'Category not found' });
+            return res.status(404).json({ error: 'Category not found' });
         }
 
-        res.status(200).json(updatedCategory);
+        return res.status(200).json(updatedCategory);
     } catch (error) {
         console.error('Error updating category:', error);
-        res.status(500).json({ error: 'Internal Server Error' });
+        return res.status(500).json({ error: 'Internal Server Error' });
     }
 }
 

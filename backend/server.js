@@ -6,6 +6,7 @@ const quizRoutes = require('./routes/quizRoutes.js')
 const imageRoutes = require('./routes/imageRoutes.js')
 const leaderboardRoutes = require('./routes/leaderboardRoutes.js')
 const userRoutes = require('./routes/userRoutes.js')
+const uploadRoutes = require('./routes/uploadRoutes.js')
 
 // starts express and uses json format
 const app = express()
@@ -17,10 +18,10 @@ app.use('/api/Quizzes', quizRoutes)
 app.use('/api/Images', imageRoutes)
 app.use('/api/Leaderboards', leaderboardRoutes)
 app.use('/api/Users', userRoutes)
-
+app.use('/api/Upload', uploadRoutes)
 
 // connects to db with mongoose to enforce schema
-mongoose.connect(process.env.MONGO_URI, {dbName: 'GuessThatImage'}) 
+mongoose.connect(process.env.MONGO_URI, {dbName: 'Test'}) 
     .then(() => {
         app.listen(process.env.PORT, () => {  
         console.log('Connected to database and listening on port', process.env.PORT)

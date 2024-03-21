@@ -4,12 +4,12 @@ const mongoose = require('mongoose')
 // get all image urls
 const getImages = async (req, res) => {
     try {
-        const imageIds = req.query.imageIDs.split(',');
-        if (!imageIds || !Array.isArray(imageIds)) {
-            return res.status(400).json({ error: 'Invalid or missing imageIDs parameter' });
+        const quizID = req.query.quizID
+        console.log(quizID)
+        if (!quizID) {
+            return res.status(400).json({ error: 'Invalid or missing quizID parameter' });
         }
-        const objectIdArray = imageIds.map(id => mongoose.Types.ObjectId.createFromHexString(id));
-        const images = await Image.find({ _id: { $in: objectIdArray } });
+        const images = await Image.find({ quizReferenceID : quizID });
 
         res.status(200).json(images);
     } catch (error) {
@@ -20,15 +20,13 @@ const getImages = async (req, res) => {
 // create a new image url
 const createImages = async (req, res) => {
     try {
-        const images = req.body; 
+        const imageData = req.body; 
 
-        const updatedIDImages = images.map(image => ({
-            _id: new mongoose.Types.ObjectId(), // Generate ObjectId
-            imageUrl: image.imageUrl,
-            imageName: image.imageName
-        }));
+        imageData.forEach(image => {
+            image._id = new mongoose.Types.ObjectId()
+        })
 
-        const insertedImages = await Image.insertMany(updatedIDImages);
+        const insertedImages = await Image.insertMany(imageData);
         const extractedObjectIds = insertedImages.map(image => image._id);
 
         res.status(201).json(extractedObjectIds);

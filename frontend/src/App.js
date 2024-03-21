@@ -11,11 +11,12 @@ import Login from './pages/Login.js';
 import Signup from './pages/Signup.js';
 import Upload from './pages/Upload.js';
 import Leaderboard from './pages/Leaderboard.js';
-import Account from './pages/Account.js';
+import Profile from './pages/Profile.js';
 
 // need this extra layer to update category 
 function App() {
   const { user } = useAuthContext()
+  console.log(user)
   const {quiz} = useContext(GameContext)
   return (
     <div className="App">
@@ -27,7 +28,7 @@ function App() {
             element={<Home/>}>
           </Route>
           <Route 
-            path = "/game"
+            path = "/game/:quizID"
             element={quiz? <PlayGame/> : <Navigate to="/"/>}>
           </Route>
           <Route 
@@ -48,7 +49,7 @@ function App() {
           </Route>
           <Route 
             path = "/account"
-            element={user ? <Account/> : <Navigate to="/"/>}>
+            element={user ? <Profile/> : <Navigate to="/"/>}>
           </Route>
         </Routes>
       </BrowserRouter>

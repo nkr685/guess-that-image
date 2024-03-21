@@ -19,12 +19,12 @@ function Board(props) {
     const [incorrect, setIncorrect] = useState(0)
 
     // constants
+    const height = 600
+    const width = 1000;
     const placeholderImageUrl = "https://upload.wikimedia.org/wikipedia/commons/2/25/Icon-round-Question_mark.jpg"
     const placeholderImageName = "Placeholder"
     const reward = 300;
     const penalty = 100;
-    const height = 600
-    const width = 1000;
     const hintLimit = 3;
     const startTime = 30
     

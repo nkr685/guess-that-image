@@ -11,16 +11,22 @@ const getQuizzes = async (req, res) => {
     }
 }
 
+const getQuiz = async (req, res) => {
+    try {
+        const quizID = req.params.quizID
+        const quiz = await Quiz.findById(quizID)
+        return res.status(200).json(quiz)
+    } catch (error) {
+        return res.status(500).json({error: 'GET Cant find quiz'})
+    }
+}
+
 const createQuiz = async (req, res) => {
     const quizData  = req.body;
-    const quizId = new mongoose.Types.ObjectId();
-    const quizWithId = { ...quizData, _id: quizId };
-    console.log(quizData)
-    console.log(quizWithId)
-    await Quiz.create(quizWithId);
-    res.status(201).json({ createdObjectId: quizId }); // Return the created ObjectId in a JSON object
+    await Quiz.create(quizData)
+    res.status(201).json({ createdObjectId: quizData["_id"] }) // Return the created ObjectId in a JSON object
 }
 
 module.exports = {
-    getQuizzes, createQuiz
+    getQuizzes, createQuiz, getQuiz
 }

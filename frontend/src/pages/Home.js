@@ -65,7 +65,7 @@ const Home = () => {
             <h2 style={{fontSize: 30}}>{category.categoryName}</h2>
             <div className="card-container">
                 {category.quizIDs.map((quizID, idx2) => (
-                <Card key={idx2} title={quizzes[quizID].quizName} thumbnail={quizzes[quizID].thumbnailUrl} linkTo="/game" onClick={()=> handleCardClick(quizzes[quizID])}/>
+                <Card key={idx2} title={quizzes[quizID].quizName} thumbnail={quizzes[quizID].thumbnailUrl} linkTo={`/game/${quizID}`} onClick={()=> handleCardClick(quizzes[quizID])}/>
                 ))}
             </div>
             </div>

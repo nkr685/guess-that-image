@@ -27,9 +27,10 @@ const getLeaderboard = async (req, res) => {
 
 // create a new leaderboard
 const createLeaderboard = async (req, res) => {
-    const leaderboardData  = req.body;
+    const quizName = req.body["quizName"]
+    const leaderboardData  = {quizName, scores: []}
     const leaderboardId = new mongoose.Types.ObjectId();
-    const leaderboardWithId = { ...leaderboardData, _id: leaderboardId };
+    const leaderboardWithId = { ...leaderboardData, _id: leaderboardId};
     await Leaderboard.create(leaderboardWithId);
     res.status(201).json({ createdObjectId: leaderboardId }); // Return the created ObjectId in a JSON object
 }

@@ -27,6 +27,7 @@ const Leaderboard = () => {
     useEffect(() => {
         const fetchLeaderboards = async()=> {
             const json = await getAllLeaderboards()
+            console.log(json)
             setLeaderboards(json)
             
         }
@@ -84,15 +85,17 @@ const Leaderboard = () => {
                     </thead>
                     <tbody>
                         {(leaderboard || !leaderboard)
-                            ? (leaderboard || leaderboards.find(_leaderboard => _leaderboard._id === quiz.leaderboardID)).scores
-                                .sort((a, b) => b.score - a.score) 
-                                .map((entry, index) => (
-                                    <tr key={index}>
-                                        <td>{index + 1}</td>
-                                        <td>{entry.username}</td>
-                                        <td>{entry.score}</td>
-                                    </tr>
-                                ))
+                            ? (leaderboard || leaderboards.find(_leaderboard => _leaderboard._id === quiz.leaderboardID))
+                                ? (leaderboard || leaderboards.find(_leaderboard => _leaderboard._id === quiz.leaderboardID)).scores
+                                    .sort((a, b) => b.score - a.score) 
+                                    .map((entry, index) => (
+                                        <tr key={index}>
+                                            <td>{index + 1}</td>
+                                            <td>{entry.username}</td>
+                                            <td>{entry.score}</td>
+                                        </tr>
+                                    ))
+                                : null
                             : null
                         }
                     </tbody>

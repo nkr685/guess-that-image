@@ -10,6 +10,10 @@ const imageSchema = new Schema({
     imageName: {
         type: String,
         required: true
+    },
+    quizReferenceID: {
+        type: String,
+        required: true
     }
 }, {collection: 'Images'})
 

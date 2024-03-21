@@ -4,10 +4,13 @@ import Board from '../games/gameMode1';
 import { useAuthContext } from '../hooks/useAuthContext';
 import { useLeaderboard } from '../hooks/useLeaderboard';
 import { useImage } from '../hooks/useImage';
+import { useQuiz } from '../hooks/useQuiz';
+import { useParams } from 'react-router-dom'
 
 const PlayGame = () => {
     // global vars
     const {quiz, setQuiz} = useContext(GameContext)
+    const { quizID } = useParams()
 
     // local vars
     const [imageUrls, setImageUrls] = useState(null)
@@ -16,20 +19,25 @@ const PlayGame = () => {
     // hooks
     const {user} = useAuthContext()
     const {getAllImages} = useImage()
+    const {getQuiz} = useQuiz()
     const {getLeaderboardByID, updateLeaderboard} = useLeaderboard()
+
+
+    useEffect(() => {
+        const fetchQuiz = async() => {
+            if (quizID) {
+                const quizJson = await getQuiz(quizID)
+                setQuiz(quizJson)
+            }
+        }
+        fetchQuiz()
+    }, [])
 
     // gets images when first rendering
     useEffect(() => {
-        if (!quiz || Object.keys(quiz).length === 0) { // used for refreshes
-            const str = sessionStorage.getItem('quiz')
-            if (str) {
-                const json = JSON.parse(str)
-                setQuiz(json)            
-            }
-        }
         const fetchImageUrls = async()=> {
-            if (quiz && quiz.imageIDs) {
-                const imageJson = await getAllImages(quiz.imageIDs)
+            if (quiz) {
+                const imageJson = await getAllImages(quiz._id)
                 setImageUrls(imageJson)                
             }
         }
@@ -60,18 +68,28 @@ const PlayGame = () => {
     }
 
     // returns loading screen until database loaded
-    if (!imageUrls || imageUrls.length === 0) {
+    if (!quiz._id) {
+        return (
+            <div className="App">
+                <header className="Loading-header">
+                Invalid Game ID 
+                </header>
+            </div>
+            )
+    } else if (!imageUrls || imageUrls.length === 0) {
         return (
         <div className="App">
             <header className="Loading-header">
             Loading Game
             </header>
         </div>
-        );
-    }
+        )
+    } else 
     
     return (
         <header className="App-header">
+            <label>Created by: {quiz.author}</label>
+            <label>{quiz.description}</label>
             <Board quizName={quiz.quizName} imageUrls={imageUrls} submitScore={handleSubmitScore} firstPlay={firstPlay} setFirstPlay={setFirstPlay}/>
         </header>
     )
