@@ -1,12 +1,12 @@
 const express = require('express')
 
 const {
-    uploadNewQuiz
+    uploadGame
 } = require('../controllers/uploadController.js')
 
 const router = express.Router()
 
 // login
-router.post('/', uploadNewQuiz)
+router.post('/', uploadGame)
 
 module.exports = router

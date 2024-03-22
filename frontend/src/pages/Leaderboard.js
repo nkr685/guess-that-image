@@ -1,5 +1,5 @@
 import React, { useContext, useState, useEffect } from 'react';
-import { useLeaderboard } from '../hooks/useLeaderboard';
+import { useGet } from '../hooks/useGet';
 import { GameContext } from '../context/GameContext';
 
 const Leaderboard = () => {
@@ -7,7 +7,7 @@ const Leaderboard = () => {
     const { quiz, setQuiz } = useContext(GameContext)
 
     // hooks
-    const { getAllLeaderboards} = useLeaderboard()
+    const { getAllLeaderboards} = useGet()
 
     // local vars
     const [leaderboards, setLeaderboards] = useState(null)
@@ -35,17 +35,6 @@ const Leaderboard = () => {
             fetchLeaderboards()
         }
     }, [leaderboards])
-
-    // useEffect(() => {
-    //     const test = () => {
-    //     if (leaderboards && Object.keys(quiz).length > 0 && !leaderboard) {
-    //         setLeaderboard(leaderboards[quiz.leaderboardID])
-    //     }            
-    //     }
-    //     if (!leaderboard) {
-    //         test()
-    //     }
-    // }, [leaderboards, quiz, leaderboard]);
 
     // returns loading screen until database loaded
     if (Object.keys(quiz).length === 0 || !leaderboards) {

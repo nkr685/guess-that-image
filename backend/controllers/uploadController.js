@@ -1,10 +1,10 @@
-const { uploadEntities } = require('../services/uploadQuiz.js')
+const { uploadEntities } = require('../services/uploadGame.js')
 
-const uploadNewQuiz = async (req, res) => { // CALLED BY FRONTEND 
+const uploadGame = async (req, res) => { // CALLED BY FRONTEND 
     response = await uploadEntities(req.body)
     return response
 }
 
 module.exports = {
-    uploadNewQuiz
+    uploadGame
 } 

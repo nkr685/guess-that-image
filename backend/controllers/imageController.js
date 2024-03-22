@@ -5,7 +5,6 @@ const mongoose = require('mongoose')
 const getImages = async (req, res) => {
     try {
         const quizID = req.query.quizID
-        console.log(quizID)
         if (!quizID) {
             return res.status(400).json({ error: 'Invalid or missing quizID parameter' });
         }

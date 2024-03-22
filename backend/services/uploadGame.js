@@ -18,8 +18,6 @@ const uploadEntities = async (uploadData) => {
     } else {
         updateCategory(categoryID, newCategoryData)
     }     
-
-    // console.log(quizResponse)
 }
 
 const createImages = async (imageData) => {

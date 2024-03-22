@@ -5,7 +5,6 @@ const mongoose = require('mongoose')
 const getCategories = async (req, res) => {
     try {
         const categories = await Category.find({});
-    
         return res.status(200).json(categories);
     } catch (error) {
         return res.status(500).json({error: 'GETALL Cant find categories'});
@@ -23,7 +22,6 @@ const createCategory = async (req, res) => {
 // update an existing category
 const updateCategory = async (req, res) => {
     try {
-        console.log(req)
         const { _id, quizIDs } = req.body; // category name is included but will never change
         const updatedCategory = await Category.findOneAndUpdate(
             { _id }, // searches by id

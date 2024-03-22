@@ -1,8 +1,7 @@
 import { useState, useEffect, useContext } from 'react';
 import Card from '../components/Card';
 import { GameContext } from '../context/GameContext';
-import { useCategory } from '../hooks/useCategory';
-import { useQuiz } from '../hooks/useQuiz';
+import { useGet } from '../hooks/useGet';
 
 const Home = () => {
     // // global vars
@@ -13,8 +12,7 @@ const Home = () => {
     const [quizzes, setQuizzes] = useState(null)
 
     // hooks
-    const { getAllCategories } = useCategory()    
-    const { getAllQuizzes } = useQuiz()
+    const { getAllCategories, getAllQuizzes } = useGet()    
 
     useEffect(() => {
         const fetchQuizzes = async()=> {

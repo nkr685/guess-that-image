@@ -29,7 +29,7 @@ function App() {
           </Route>
           <Route 
             path = "/game/:quizID"
-            element={quiz? <PlayGame/> : <Navigate to="/"/>}>
+            element={quiz ? <PlayGame/> : <Navigate to="/"/>}>
           </Route>
           <Route 
             path = "/login"
@@ -45,7 +45,7 @@ function App() {
           </Route>
           <Route 
             path = "/upload"
-            element={<Upload/>}>
+            element={user ? <Upload/> : <Navigate to="/"/>}>
           </Route>
           <Route 
             path = "/account"

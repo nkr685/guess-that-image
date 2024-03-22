@@ -1,16 +1,17 @@
 import React, { useState, useEffect } from 'react'
-import { useCategory } from '../hooks/useCategory'
-import { useUpload } from '../hooks/useUpload'
+import { useGet } from '../hooks/useGet';
+import { useSend } from '../hooks/useSend';
 import { useAuthContext } from '../hooks/useAuthContext'
 import InputField from '../components/InputField'
 
 const Upload = () => {
+    // hooks
+    const { getAllCategories } = useGet()
+    const { updateDatabase } = useSend()
+
     // global vars
     const { user } = useAuthContext()
 
-    // hooks
-    const { getAllCategories } = useCategory()
-    const { uploadNewQuiz } = useUpload()
 
     // local vars
     const [ categories, setCategories ] = useState(null)
@@ -42,7 +43,6 @@ const Upload = () => {
             if (json) {
                 setCategories(json)
                 console.log(json)
-                // setUploadData({...uploadData})
             } 
         }
         fetchCategories()
@@ -100,9 +100,9 @@ const Upload = () => {
             setStatusLabel(" Success!")
             const categoryData = categories.find(category => category.categoryName === uploadData.categoryName);
             if (categoryData) {
-                const response = await uploadNewQuiz({...uploadData, params:paramData, categoryID: categoryData["_id"], quizIDs: categoryData['quizIDs']})
+                const response = await updateDatabase({...uploadData, params:paramData, categoryID: categoryData["_id"], quizIDs: categoryData['quizIDs']})
             } else {
-                const response = await uploadNewQuiz({...uploadData, params:paramData})
+                const response = await updateDatabase({...uploadData, params:paramData})
             }
         } else {
             setColor("red")

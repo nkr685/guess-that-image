@@ -1,20 +1,4 @@
-export const useLeaderboard = () => {
-
-    // gets all leaderboards to populate leaderboard select on Leaderboard page
-    const getAllLeaderboards = async()=> { 
-        const response = await fetch(`api/Leaderboards/`)
-        if (response.ok) {
-            return await response.json()
-        }
-    }
-
-    // gets single leaderboard to display scores on Leaderboard page
-    const getLeaderboardByID = async (id) => { 
-        const response = await fetch(`/api/Leaderboards/${id}`)
-        if (response.ok) {
-            return await response.json()
-        }
-    }
+export const useSend = () => {
 
     // creates leaderboard from Upload page
     const createLeaderboard = async (leaderboardData) => {
@@ -37,5 +21,15 @@ export const useLeaderboard = () => {
         return await response.json()
     }
 
-    return { getAllLeaderboards, getLeaderboardByID, createLeaderboard, updateLeaderboard}
+    // creates all data from Upload page
+    const updateDatabase = async (gameData) => {
+        const response = await fetch(`/api/Upload/`, {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify(gameData)
+        })
+        return "test" 
+    }
+
+    return { createLeaderboard, updateLeaderboard, updateDatabase}
 }
