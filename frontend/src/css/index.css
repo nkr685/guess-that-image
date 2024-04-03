@@ -364,63 +364,17 @@ position: relative;
 z-index: 1; 
 }
 
-/* ACCOUNT */
-.account-container {
-max-width: 400px;
-margin: 20px auto;
-padding: 20px;
-background-color: #3b3b3b;
-box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-border-radius: 8px;
-}
-
-.account-user-info {
-text-align: center;
-margin-bottom: 20px;
-}
-
-.account-button-container {
-display: flex;
-flex-direction: column;
-align-items: center;
-}
-
-.account-change-password-btn,
-.account-delete-account-btn {
-padding: 12px 24px;
-border: none;
-border-radius: 5px;
-color: #fff;
-cursor: pointer;
-font-size: 16px;
-margin-bottom: 10px;
-transition: background-color 0.3s;
-}
-
-.account-change-password-btn {
-background-color: #3498db; 
-}
-
-.account-delete-account-btn {
-background-color: #e74c3c; 
-}
-
-.account-change-password-btn:hover,
-.account-delete-account-btn:hover {
-background-color: #333;
-}
 
 /* UPLOAD */
 
 .upload-container {
-font-family: 'Arial', sans-serif;
 background-color: #282c34;
 color: #fff;
 display: flex;
-align-items: center;
+/* align-items: center; */
 justify-content: center;
 min-height: 100vh;
-margin: 0;
+margin-top: 50px;
 }
 
 .upload-form {
@@ -440,11 +394,6 @@ color: #fff;
 }
 
 
-.upload-label {
-display: block;
-margin-bottom: 8px;
-color: #fff;
-}
 
 .upload-input {
 width: 100%;
@@ -508,16 +457,127 @@ display: flex;
 
 
 /* ACCOUNT */
-  .profile-pic-container {
-    margin-right: 20px;
-  }
-  
-  .profile-pic {
-    width: 100px;
-    height: 100px;
+.account-container {
+max-width: 400px;
+margin: 20px auto;
+padding: 20px;
+background-color: #3b3b3b;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+border-radius: 8px;
+}
+
+.account-user-info {
+text-align: center;
+margin-bottom: 20px;
+}
+
+.account-set-pic-btn {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    transition: background-color 0.3s;
+
+}
+
+.account-change-password-btn,
+.account-delete-account-btn {
+    display: flex;
+    flex-direction: 'row';
+    align-items: center;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    margin-bottom: 10px;
+    transition: background-color 0.3s;
+}
+
+.account-change-password-btn {
+background-color: #3498db; 
+}
+
+.account-delete-account-btn {
+background-color: #e74c3c; 
+}
+
+.account-set-pic-btn {
+    background-color: #666666; 
+    }
+
+.account-change-password-btn:hover,
+.account-delete-account-btn:hover,
+.account-set-pic-btn:hover {
+background-color: #333;
+}
+
+
+.profile-pic-container {
+    display: flex;
+    flex-direction: row;
+    align-items: top;
+    /* justify-content: left; */
+}
+
+.profile-pic {
+    width: 200px;
+    height: 200px;
     border-radius: 50%;
-  }
-  
-  .change-profile-pic-btn {
+}
+
+.change-profile-pic-btn {
     margin-top: 10px;
-  }
+}
+
+.profile_label {
+    justify-content: center;
+
+}
+    
+.profile-input {
+    padding: 10px;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+    border: 1px solid #777;
+    border-radius: 4px;
+    outline: none;
+    background-color: #555;
+    color: #fff;
+}
+
+.profile_column {
+    justify-content: center;
+    margin-right: 50px;
+}
+
+
+
+/* RATING */
+
+.star-rating {
+    font-size: 24px;
+}
+
+.star {
+    cursor: pointer;
+    color: gray;
+}
+
+.filled {
+    color: gold;
+}
+
+
+/* OTHER */
+
+.column_center {
+    display: flex;
+    flex-direction: 'row';
+    justify-content: center;
+}

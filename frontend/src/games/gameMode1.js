@@ -7,7 +7,7 @@ import { useEffect, useState } from 'react';
 
 function Board(props) {
     // properties
-    const {imageUrls, quizName, submitScore, firstPlay, setFirstPlay} = props
+    const { quiz, imageUrls, quizName, submitScore, firstPlay, setFirstPlay} = props
 
     // local vars
     const [tempImageUrls, setTempImageUrls] = useState(imageUrls)
@@ -17,17 +17,21 @@ function Board(props) {
     const [score, setScore] = useState(0)
     const [correct, setCorrect] = useState(0)
     const [incorrect, setIncorrect] = useState(0)
-
     // constants
     const height = 600
     const width = 1000;
     const placeholderImageUrl = "https://upload.wikimedia.org/wikipedia/commons/2/25/Icon-round-Question_mark.jpg"
     const placeholderImageName = "Placeholder"
-    const reward = 300;
-    const penalty = 100;
-    const hintLimit = 3;
-    const startTime = 30
-    
+    var reward = 300;
+    var penalty = 100;
+    var hintLimit = 3;
+    var startTime = 30
+    if (Object.prototype.hasOwnProperty.call(quiz, "params")) {
+        reward = parseInt(quiz.params.reward,10)
+        penalty = parseInt(quiz.params.penalty, 10)
+        hintLimit = parseInt(quiz.params.hintLimit, 10)
+        startTime = parseInt(quiz.params.startTime, 10)
+    }
     // updates every time new game starts
     useEffect(() => { 
         NextImage()

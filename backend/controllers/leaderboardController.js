@@ -52,7 +52,6 @@ const updateLeaderboard = async (req, res) => {
         res.status(404).json({error: "UPDATE no such leaderboard"})
     }
     res.status(200).json(updatedLeaderboardData)
-
 }
 
 module.exports = {

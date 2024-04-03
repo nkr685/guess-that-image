@@ -12,11 +12,20 @@ export const useSend = () => {
 
     // submits score from PlayGame page
     const updateLeaderboard = async (leaderboard) => {
-        console.log(leaderboard)
         const response = await fetch(`/api/Leaderboards/${leaderboard.leaderboardId}`, {
             method: 'PATCH',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify(leaderboard)
+        })
+        return await response.json()
+    }
+
+    // submits rating from PlayGame page
+    const updateQuiz = async (quiz) => {
+        const response = await fetch(`/api/Quizzes/${quiz._id}`, {
+            method: 'PATCH',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify(quiz)
         })
         return await response.json()
     }
@@ -31,5 +40,5 @@ export const useSend = () => {
         return "test" 
     }
 
-    return { createLeaderboard, updateLeaderboard, updateDatabase}
+    return { createLeaderboard, updateLeaderboard, updateDatabase, updateQuiz}
 }

@@ -1,5 +1,7 @@
 const User = require('../models/userModel.js')
 const jwt = require('jsonwebtoken')
+const mongoose = require('mongoose')
+
 
 const createToken = (_id) => { // created a function so it can be used by both login and signup
     return jwt.sign({_id}, process.env.SECRET, { expiresIn: '3d'}) // payload, dont put anything sensitive in here, uses secret code from .env, login token lasts 3 days
@@ -40,8 +42,35 @@ const signUpUser = async (req, res) => {
     }
 }
 
+const getUser = async (req, res) => {
+    const {id} = req.params
+    if (!mongoose.Types.ObjectId.isValid(id)){
+        return res.status(404).json({error: 'GET invalid id'})
+    }
+    const user = await User.findById(id)
+    if (!user) {
+        return res.status(404).json({error: "GET no such user"})
+    }
+    user.password = ""
+    return res.status(200).json(user)
+}
+
+const deleteUser = async (req, res) => {
+    const {id} = req.params
+    if (!mongoose.Types.ObjectId.isValid(id)){
+        return res.status(404).json({error: 'GET invalid id'})
+    }
+    const user = await User.findByIdAndDelete(id)
+    if (!user) {
+        return res.status(404).json({error: "GET no such author"})
+    }
+    user.password = ""
+    return res.status(200).json(user)
+}
 
 module.exports = {
     loginUser,
-    signUpUser
+    signUpUser,
+    getUser,
+    deleteUser
 }

@@ -4,21 +4,24 @@ import Board from '../games/gameMode1';
 import { useAuthContext } from '../hooks/useAuthContext';
 import { useGet } from '../hooks/useGet';
 import { useSend } from '../hooks/useSend';
-import { useParams } from 'react-router-dom'
+import { useParams, useLocation } from 'react-router-dom'
+import Rating from '../components/Rating';
 
 const PlayGame = () => {
+    // hooks
+    const { user } = useAuthContext()
+    const { getAllImages, getQuiz, getLeaderboard, getUser } = useGet()
+    const { updateLeaderboard, updateQuiz } = useSend()
+
     // global vars
+    const { pathname } = useLocation()
     const {quiz, setQuiz} = useContext(GameContext)
     const { quizID } = useParams()
 
     // local vars
     const [imageUrls, setImageUrls] = useState(null)
     const [firstPlay, setFirstPlay] = useState(false)
-
-    // hooks
-    const { user } = useAuthContext()
-    const { getAllImages, getQuiz, getLeaderboard } = useGet()
-    const { updateLeaderboard } = useSend()
+    const [author, setAuthor] = useState(null)
 
 
     useEffect(() => {
@@ -30,6 +33,17 @@ const PlayGame = () => {
         }
         fetchQuiz()
     }, [])
+
+    useEffect(() => {
+        const fetchAuthor = async(authorID) => {
+            const authorJson = await getUser(authorID)
+            setAuthor(authorJson)
+        }
+        if (quiz.author) {
+            console.log(quiz)
+            fetchAuthor(quiz.author)
+        }
+    }, [quiz])
 
     // gets images when first rendering
     useEffect(() => {
@@ -65,6 +79,20 @@ const PlayGame = () => {
         }
     }
 
+    const handleSubmitRating = (score) => {
+        if (user) {
+            const submitRating = async () => {
+                const newQuiz = {...quiz}
+                if (!newQuiz.hasOwnProperty('ratings')){
+                    newQuiz['ratings'] = {}
+                }
+                newQuiz['ratings'][user._id] = score
+                await updateQuiz(newQuiz)
+            }
+            submitRating()
+        }
+    }
+
     // returns loading screen until database loaded
     if (!quiz._id) {
         return (
@@ -74,7 +102,7 @@ const PlayGame = () => {
                 </header>
             </div>
             )
-    } else if (!imageUrls || imageUrls.length === 0) {
+    } else if (!imageUrls || imageUrls.length === 0 || !author) { // needs time to grab data from database
         return (
         <div className="App">
             <header className="Loading-header">
@@ -86,9 +114,11 @@ const PlayGame = () => {
     
     return (
         <header className="App-header">
-            <label>Created by: {quiz.author}</label>
+            <label>Created by: {author.username}</label>
+            <button onClick={()=>{alert("Link Copied!"); navigator.clipboard.writeText("http://localhost:3000"+pathname)}}>Share!</button>
             <label>{quiz.description}</label>
-            <Board quizName={quiz.quizName} imageUrls={imageUrls} submitScore={handleSubmitScore} firstPlay={firstPlay} setFirstPlay={setFirstPlay}/>
+            {/* <Rating userRating={user ? quiz.ratings[user._id] : 0} submitRating={handleSubmitRating}/> */}
+            <Board quiz={quiz} quizName={quiz.quizName} imageUrls={imageUrls} submitScore={handleSubmitScore} firstPlay={firstPlay} setFirstPlay={setFirstPlay}/>
         </header>
     )
 }

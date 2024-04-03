@@ -1,20 +1,16 @@
 import React, { useState } from 'react'
 import { useAuthContext } from '../hooks/useAuthContext.js'
-import InputField from '../components/InputField'
+import { Link } from 'react-router-dom'
+
 
 const Profile = () => {
     const [password, setPassword] = useState('')
     const [isDeleting, setIsDeleting] = useState(false)
     const { user } = useAuthContext()
+    const [error, setError] = useState("")
+    const [errorList, setErrorList] = useState([])
 
     console.log(user)
-
-    // Function to format account creation date
-    const formatAccountCreationDate = (dateString) => {
-        if (!dateString) return ''
-        const date = new Date(dateString);
-        return `${date.toLocaleString('default', { month: 'long' })} ${date.getFullYear()}`;
-    }
 
     const handleChangePassword = () => {
         console.log('change passwoerd')
@@ -32,23 +28,34 @@ const Profile = () => {
         <div className="upload-container">
             <div className="upload-form">
                 <div className='profile-pic-container'>
-                    <img className='profile-pic'src="https://cdn.pixabay.com/photo/2021/06/07/13/45/user-6318003_960_720.png" ></img>
-                    <InputField label={"text"} text="Profile Pic Url:" name="categoryName" onChange={handleTextChange}/>
+                    <img className='profile-pic' src={user.profilePic ? user.profilePic : "https://cdn.pixabay.com/photo/2021/06/07/13/45/user-6318003_960_720.png"} ></img>
+                    <div className='profile_column'> 
+                        <h1>{user.username}</h1>
+                        <h3>Member since: {new Date(user.accountCreationDate).toLocaleString('default', { month: 'long' })} 2024</h3>
+                        <h3>I'm a new player!</h3>
+                    </div>
+                    <div className='profile_column'> 
+                        <h3>Quizzes Played</h3>
+                        <label style={{alignItems: 'center'}}>0</label>
+                    </div>
+                    <div className='profile_column'> 
+                        <h3>Quizzes Created</h3>
+                        <label>0</label>
+                    </div>
                 </div>
-                <h2>{user.username}</h2>
-                <label>{new Date(user.accountCreationDate).toLocaleString('default', { month: 'long' })} 2024</label>
-                <InputField label={"text"} text="Bio:" name="categoryName" onChange={handleTextChange}/>
 
-                <button className="account-change-password-btn" onClick={handleChangePassword}>
-                    Change Password
-                    </button>
-                    <button
-                    className="account-delete-account-btn"
-                    onClick={handleDeleteAccount}
-                    disabled={isDeleting}
-                    >
-                    {isDeleting ? 'Deleting...' : 'Delete Account'}
-                    </button>
+                <div className='column_center'>
+                    {/* <button className="account-change-password-btn" onClick={handleChangePassword}>
+                        Change Password
+                    </button> */}
+                    <Link to="/account">
+                        <button className='account-change-password-btn'>Modify Account</button>
+                    </Link>
+                    {/* <button className="account-delete-account-btn" onClick={handleDeleteAccount} disabled={isDeleting}>
+                        {isDeleting ? 'Deleting...' : 'Delete Account'}
+                    </button>                     */}
+                </div>
+
             </div>
         </div>
 

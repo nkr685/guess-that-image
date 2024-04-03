@@ -32,10 +32,18 @@ export const useGet = () => {
         const response = await fetch(`/api/Images?quizID=${quizID}`, {
             method: 'GET',
             headers: { 'Content-Type': 'application/json' }
-        });
+        })
         return await response.json(); // Returns a dictionary of images
     } 
 
-    return { getAllCategories, getAllQuizzes, getQuiz, getAllLeaderboards, getLeaderboard, getAllImages }
+    const getUser = async (userID) => {
+        const response = await fetch(`/api/Users/${userID}`, {
+            method: 'GET',
+            headers: { 'Content-Type': 'application/json' }
+        })
+        return await response.json()
+    }
+
+    return { getAllCategories, getAllQuizzes, getQuiz, getAllLeaderboards, getLeaderboard, getAllImages, getUser }
 
 }

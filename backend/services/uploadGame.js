@@ -9,7 +9,7 @@ const uploadEntities = async (uploadData) => {
     const imageIDs = await createImages(imageData)
     const leaderboardResponse = await createLeaderboard(quizName)
     const leaderboardID = leaderboardResponse.createdObjectId
-    const newQuizData = {_id: newQuizID, quizName, thumbnailUrl, leaderboardID, imageIDs, author, description}
+    const newQuizData = {_id: newQuizID, quizName, thumbnailUrl, leaderboardID, imageIDs, author, description, params}
     await createQuiz(newQuizData)
     const newQuizIDs = [...quizIDs, newQuizID.toString()]
     const newCategoryData = { _id: categoryID, categoryName, quizIDs:newQuizIDs }

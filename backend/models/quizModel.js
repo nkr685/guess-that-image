@@ -33,7 +33,7 @@ const quizSchema = new Schema({
         required: false
     },
     ratings: {
-        type: Array,
+        type: Object,
         required: false
     },
     likes: {
@@ -58,6 +58,10 @@ const quizSchema = new Schema({
     },
     comments: {
         type: Array,
+        required: false
+    },
+    params: {
+        type: Object,
         required: false
     }
 }, {collection: 'Quizzes'})

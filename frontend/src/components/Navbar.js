@@ -28,8 +28,7 @@ const Navbar = () => {
 
             {user  && (
                 <div className='nav-links'>
-                    <Link to="/account">
-
+                    <Link to="/profile">
                         <h2>{user.username}</h2>
                     </Link>
                     <button onClick={handleClick}>Log Out</button>

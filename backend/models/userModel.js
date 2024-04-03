@@ -94,7 +94,7 @@ UserSchema.statics.signup = async function(username, password) { // cant use arr
     const salt = await bcrypt.genSalt(10) // takes time to create salt, longer makes harder for hacker, takes longer to signup
     const hash = await bcrypt.hash(password, salt)
 
-    const user = await this.create({ username, password: hash }) // creates document for database
+    const user = await this.create({ username, password: hash, profilePic: "https://cdn.pixabay.com/photo/2021/06/07/13/45/user-6318003_960_720.png" }) // creates document for database
 
     return user
 }

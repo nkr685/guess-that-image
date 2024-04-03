@@ -27,6 +27,23 @@ const createQuiz = async (req, res) => {
     res.status(201).json({ createdObjectId: quizData["_id"] }) // Return the created ObjectId in a JSON object
 }
 
+const updateQuiz = async (req, res) => {
+    const quizData = req.body
+    const id = quizData._id
+    if (!mongoose.Types.ObjectId.isValid(id)){
+        res.status(404).json({error: 'UPDATE invalid id'})
+    }
+    const updatedQuizData = await Quiz.findOneAndUpdate(
+        { _id: id },
+        { $set: quizData }, 
+        { new: true } 
+    ).exec() 
+    if (!updatedQuizData) {
+        res.status(404).json({error: "UPDATE no such quiz"})
+    }
+    res.status(200).json(updatedQuizData)
+}
+
 module.exports = {
-    getQuizzes, createQuiz, getQuiz
+    getQuizzes, createQuiz, getQuiz, updateQuiz
 }

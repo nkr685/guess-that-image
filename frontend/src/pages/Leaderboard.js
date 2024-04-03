@@ -22,22 +22,18 @@ const Leaderboard = () => {
                 setQuiz(json)            
             }
         }
-    }, [quiz])    
-
-    useEffect(() => {
         const fetchLeaderboards = async()=> {
             const json = await getAllLeaderboards()
             console.log(json)
             setLeaderboards(json)
             
         }
-        if (!leaderboards) {
-            fetchLeaderboards()
-        }
-    }, [leaderboards])
+        fetchLeaderboards()
+    }, [])    
+
 
     // returns loading screen until database loaded
-    if (Object.keys(quiz).length === 0 || !leaderboards) {
+    if (!leaderboards) {
         console.log(leaderboards)
         return (
             <div className="Loading-header">
@@ -56,8 +52,7 @@ const Leaderboard = () => {
         <div className='Leaderboard'>
             <div>
                 <select className="category-select" defaultValue={quiz.leaderboardID ? quiz.leaderboardID : -1} onChange={handleSelectChange}>
-                    {!quiz.leaderboardID && (<option key={-1} >Select Quiz</option>)
-                    }
+                    {!quiz.leaderboardID && (<option key={-1} >Select Quiz</option>)}
                     {leaderboards.map((_leaderboard, index) => (
                         <option key={_leaderboard._id} value={_leaderboard._id}>{_leaderboard.quizName}</option>
                     ))}
