@@ -1,0 +1,24 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    background-color: #333;
+    gap: 20px;
+    height: 5dvh;
+    min-height: 5dvh;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+}
+
+.navbar-links {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    text-decoration: none;
+}
+
+.navbar-links h2:hover {
+    text-shadow: 2px 2px  rgba(255, 255, 255, 0.4);
+}

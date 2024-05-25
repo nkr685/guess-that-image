@@ -1,0 +1,569 @@
+
+
+/* BOARD COMPONENTS */
+
+.image-container {
+    overflow: hidden; 
+    background-color: white;
+    }
+
+.stack-image-container {
+overflow: hidden; 
+background-color: #282c34;
+}
+
+.container {
+color: red;
+}
+
+.image {
+position: relative;
+max-width: 100%;
+max-height: 100%; 
+object-fit: cover;
+width: auto;
+height: auto; 
+display: block; 
+margin: 0 auto; 
+}
+
+.title {
+font-size: 72px;
+}
+
+.input-box {
+width: auto;
+font-size: 36px;
+}
+.guess-button {
+
+font-size: 36px;
+}
+
+.skip-button {
+
+font-size: 36px;
+}
+
+.quiz {
+display: flex;
+justify-content: flex-start;
+align-items: center;
+font-size: 40px;
+}
+
+.score {
+display: flex;
+justify-content: flex-end;
+gap: 30px;
+width: 820px;
+}
+
+.timer {
+font-size: 50px;
+}
+
+.state-button {
+font-size: 30px;
+width: 200px;
+height: 40px;
+}
+
+.hint-button {
+font-size: 30px;
+width: 150px;
+height: 40px;
+}
+
+.category-select {
+font-size: 30px;
+}
+
+
+
+/* PAGES */
+
+
+
+.home-columns {
+    display: flex;
+    flex-direction: row;
+}
+
+.home-col1, .home-col3 {
+    width: 20%;
+}
+
+.home-col2 {
+    margin: 20px;
+    width: 60%;
+}
+
+.table {
+    border: 5px solid gray;
+    margin: 30px;
+    min-height: 50vh;
+    color: white;
+}
+
+.table-items{
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+}
+
+.table-header {
+    font-size: 25px;
+}
+
+
+
+/*  PROGRESS BAR */
+
+.progress-bar {
+height: 50px;
+width: 100%;
+background-color: #cacaca;
+overflow: hidden;
+}
+
+.progress-bar-inner {
+height: 100%;
+display: block;
+justify-content: center;
+color: #000;
+transition: width .5s ease;
+}
+
+.progress-bar-inner.green {
+background-color: #4caf50;
+}
+
+.progress-bar-inner.red {
+background-color: #e74c3c;
+
+}
+
+.progress-bar-inner.yellow {
+background-color: #e7e43c;
+
+}
+
+
+
+/* CARD  */
+
+
+
+
+
+/* SIGNUP / LOGIN */
+
+.login-signup-container {
+    display: flex;
+    flex-direction: row;
+    height: 92vh;
+}
+
+.login-signup-col1 {
+    width: 60%;
+    align-items: center;
+}
+
+.login-signup-col2 {
+    width: 40%;
+    align-items: center;
+    background-color: #272727;
+
+}
+
+
+
+form.signup, form.login {
+font-size: 4vh;
+margin-top: 20vh;
+margin-left: 5vb;
+background: #272727;
+}
+
+.form-input {
+    font-size: 3vh;
+    height: 4vh;
+    width: 60vb;
+}
+
+form.signup button, form.login button {
+font-size: 30px;
+padding: 5px;
+width: 150px;
+}
+
+/* LEADERBOARD */
+
+
+
+/* UPLOAD */
+
+.upload-container {
+background-color: #282c34;
+color: #fff;
+display: flex;
+/* align-items: center; */
+justify-content: center;
+min-height: 100vh;
+margin-top: 50px;
+}
+
+.upload-form {
+background-color: #444;
+color: #fff;
+padding: 20px;
+border-radius: 8px;
+width: 80%; 
+max-width: 1000px;
+box-sizing: border-box;
+}
+
+.upload-label {
+display: block;
+margin-bottom: 8px;
+color: #fff;
+}
+
+
+
+.upload-input {
+width: 100%;
+padding: 10px;
+margin-bottom: 16px;
+box-sizing: border-box;
+border: 1px solid #777;
+border-radius: 4px;
+outline: none;
+background-color: #555;
+color: #fff;
+}
+
+.upload-file-input {
+color: #ffffff;
+height: 20px;
+padding: 10px;
+text-align: center;
+cursor: pointer;
+border-radius: 4px;
+}
+
+.upload-file-label:hover {
+background-color: #ffffff;
+}
+
+.upload-button {
+background-color: #ffffff;
+width: 100px;
+color: #000000;
+padding: 10px;
+border: none;
+border-radius: 4px;
+margin-bottom: 10px;
+cursor: pointer;
+font-size: 16px;
+transition: background-color 0.3s;
+}
+
+.upload-button:hover {
+background-color: #ffffff;
+}
+
+.upload-pre {
+background-color: #666;
+padding: 10px;
+border-radius: 4px;
+overflow-x: auto;
+}
+
+.upload-heading {
+color: #fff;
+font-size: 30px;
+margin-bottom: 20px;
+text-align: center;
+}
+
+/* .upload-file-button-container button,  .upload-file-button-container label{
+display: flex;
+} */
+
+
+/* ACCOUNT */
+.account-container {
+max-width: 400px;
+margin: 20px auto;
+padding: 20px;
+background-color: #3b3b3b;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+border-radius: 8px;
+}
+
+.account-user-info {
+text-align: center;
+margin-bottom: 20px;
+}
+
+.account-set-pic-btn {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    transition: background-color 0.3s;
+
+}
+
+.account-change-password-btn,
+.account-delete-account-btn {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    margin-bottom: 10px;
+    transition: background-color 0.3s;
+}
+
+.account-change-password-btn {
+background-color: #3498db; 
+}
+
+.account-delete-account-btn {
+background-color: #e74c3c; 
+}
+
+.account-set-pic-btn {
+    background-color: #666666; 
+    }
+
+.account-change-password-btn:hover,
+.account-delete-account-btn:hover,
+.account-set-pic-btn:hover {
+background-color: #333;
+}
+
+
+.profile-pic-container {
+    display: flex;
+    flex-direction: row;
+    align-items: top;
+    /* justify-content: left; */
+}
+
+.profile-pic {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
+
+.change-profile-pic-btn {
+    margin-top: 10px;
+}
+
+.profile_label {
+    justify-content: center;
+
+}
+    
+.profile-input {
+    padding: 10px;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+    border: 1px solid #777;
+    border-radius: 4px;
+    outline: none;
+    background-color: #555;
+    color: #fff;
+}
+
+.profile_column {
+    justify-content: center;
+    margin-right: 50px;
+}
+
+.profile_column2 {
+    margin-right: 50px;
+}
+
+
+
+.profile_row {
+    display: flex;
+    flex-direction: row;
+}
+
+
+/* RATING */
+
+.star-rating {
+    font-size: 24px;
+}
+
+.star {
+    cursor: pointer;
+    color: gray;
+}
+
+.filled {
+    color: gold;
+}
+
+
+/* OTHER */
+
+.column_center {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.background {
+    position: absolute;
+
+    z-index: 0; 
+    position: relative;
+    max-width: 100%;
+    max-height: 100%; 
+    object-fit: cover;
+    width: auto;
+    height: auto; 
+    display: block; 
+    margin: 0 auto; 
+  }
+  
+.overlay {
+z-index: 2;
+max-width: 100%;
+max-height: 100%; 
+filter: brightness(0%) sepia(0%) hue-rotate(0deg);
+margin: 0 auto; 
+} 
+
+.entry-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.achievements {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;     border: 2px dotted white;
+    min-height: 10vh;
+    border-radius: 10px;
+    margin: 20px;    
+}
+
+.quiz-history {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;     border: 3px ridge white;
+    min-height: 10vh;
+    margin: 20px;
+}
+
+.carousel {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 40vh;
+    }
+
+.carousel {
+    position: relative;
+    margin: 0 auto; /* Center the carousel horizontally */
+    overflow: hidden;
+    border: 1px solid #f0f0f0;
+    margin: 0; 
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .carousel img {
+    display: block;
+    width: 100%;
+    height: auto;
+    z-index: 1;
+  }
+  
+  .carousel button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .carousel button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  
+  .carousel button:first-child {
+    left: 0;
+  }
+  
+  .carousel button:last-child {
+    right: 0;
+  }
+
+  .carousel-image-container {
+    position: relative;
+    display: inline-block;
+    z-index: 0;
+}
+
+  .carousel-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 20%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 2;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .carousel-overlay-items {
+    margin-right: 20px;
+    color: white;
+  }
+
+  .popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+  }
+  
+  .popup-content {
+    background-color: rgb(29, 29, 29);
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    z-index: 11;
+  }
