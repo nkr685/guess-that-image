@@ -1,0 +1,36 @@
+.progress-bar {
+    height: 4dvh;
+    width: 96dvw;
+    margin-left: 2dvw;
+    background-color: #cacaca;
+    overflow: hidden;
+    border-radius: 10px;
+}
+    
+.progress-bar-inner {
+    height: 100%;
+    display: block;
+    justify-content: center;
+    color: #000;
+    transition: width .5s ease;
+}
+    
+.progress-bar-inner.green {
+    background-color: #4caf50;
+}
+    
+.progress-bar-inner.red {
+    background-color: #e74c3c;
+}
+    
+.progress-bar-inner.yellow {
+    background-color: #e7e43c;
+}
+    
+.progress-text {
+    z-index: 2;
+    display: flex;
+    transform: translate(1dvw, -4dvh);
+    margin-left: 2dvw;
+    font-size: 3dvh;
+}

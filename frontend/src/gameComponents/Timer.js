@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-
+import "../css/gameComponents/Timer.css"
 const Timer = (props) => {
     // properties
     const { gameActive, setGameState, startTime } = props
@@ -41,11 +41,13 @@ const Timer = (props) => {
     }, [gameActive, currentTime]);
 
     return (
-        <div className="progress-bar" style={{ width: '100%' }}>
-            <div className={`progress-bar-inner ${isHalfTime ? (isAlmostEndTime ? 'red' : 'yellow') : 'green'}`} style={{ width: `${progress}%` }}>
-                {timerText}
-            </div>
+        <div>
+            <div className="progress-bar">
+                <div className={`progress-bar-inner ${isHalfTime ? (isAlmostEndTime ? 'red' : 'yellow') : 'green'}`} style={{ width: `${progress}%` }}/>
+            </div>   
+            <label className="progress-text">Time Remaining: {timerText}</label>         
         </div>
+
     )
 
 }

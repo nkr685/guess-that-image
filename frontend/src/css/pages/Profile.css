@@ -1,0 +1,145 @@
+.profile-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 4dvh;
+}
+
+.profile-form {
+    background-color: #444;
+    color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    width: 70dvw;
+
+}
+
+.profile-pic-container {
+    display: flex;
+    flex-direction: row;
+    align-items: top;
+    /* justify-content: left; */
+}
+
+.profile-pic {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
+
+.change-profile-pic-btn {
+    margin-top: 10px;
+}
+
+.profile_label {
+    justify-content: center;
+
+}
+    
+.profile-input {
+    padding: 10px;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+    border: 1px solid #777;
+    border-radius: 4px;
+    outline: none;
+    background-color: #555;
+    color: #fff;
+}
+
+.profile_column {
+    justify-content: center;
+    margin-right: 50px;
+}
+
+.profile_column2 {
+    margin-right: 50px;
+}
+
+.profile_row {
+    display: flex;
+    flex-direction: row;
+}
+
+.achievements {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;     border: 2px dotted white;
+    min-height: 10vh;
+    border-radius: 10px;
+    margin: 20px;    
+}
+
+.quiz-history {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;     border: 3px ridge white;
+    min-height: 10vh;
+    margin: 20px;
+}
+
+.account-container {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #3b3b3b;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    }
+    
+    .account-user-info {
+    text-align: center;
+    margin-bottom: 20px;
+    }
+    
+    .account-set-pic-btn {
+        padding: 12px 24px;
+        border: none;
+        border-radius: 5px;
+        color: #fff;
+        cursor: pointer;
+        font-size: 16px;
+        margin-bottom: 10px;
+        margin-right: 10px;
+        transition: background-color 0.3s;
+    
+    }
+    
+    .account-change-password-btn,
+    .account-delete-account-btn {
+        padding: 12px 24px;
+        border: none;
+        border-radius: 5px;
+        color: #fff;
+        cursor: pointer;
+        font-size: 16px;
+        margin-bottom: 10px;
+        transition: background-color 0.3s;
+    }
+    
+    .account-change-password-btn {
+    background-color: #3498db; 
+    }
+    
+    .account-delete-account-btn {
+    background-color: #e74c3c; 
+    }
+    
+    .account-set-pic-btn {
+        background-color: #666666; 
+        }
+    
+    .account-change-password-btn:hover,
+    .account-delete-account-btn:hover,
+    .account-set-pic-btn:hover {
+    background-color: #333;
+    }
+
+    .column_center {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+    
+    

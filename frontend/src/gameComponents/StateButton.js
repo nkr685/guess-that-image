@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import "../css/gameComponents/StateButton.css"
 
 const StateButton = (props) => {
     // properties

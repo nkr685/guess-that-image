@@ -3,6 +3,10 @@ const Schema = mongoose.Schema
 
 // schema for in db
 const scoreSchema = new Schema({
+    _id: {
+        type: String,
+        required: false
+    },
     username: {
         type: String,
         required: false

@@ -21,6 +21,16 @@ const getQuiz = async (req, res) => {
     }
 }
 
+
+const getRandomQuiz = async (req, res) => {
+    try {
+        const quiz = await Quiz.aggregate([{ $sample: { size: 1 } }])
+        return res.status(200).json(quiz)
+    } catch (error) {
+        return res.status(500).json({error: 'GET Cant random'})
+    }
+}
+
 const createQuiz = async (req, res) => {
     const quizData  = req.body;
     await Quiz.create(quizData)
@@ -41,9 +51,10 @@ const updateQuiz = async (req, res) => {
     if (!updatedQuizData) {
         res.status(404).json({error: "UPDATE no such quiz"})
     }
+    console.log(updatedQuizData)
     res.status(200).json(updatedQuizData)
 }
 
 module.exports = {
-    getQuizzes, createQuiz, getQuiz, updateQuiz
+    getQuizzes, createQuiz, getQuiz, updateQuiz, getRandomQuiz
 }

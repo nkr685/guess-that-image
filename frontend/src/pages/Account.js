@@ -2,46 +2,48 @@ import { Link } from 'react-router-dom'
 import React, { useState } from 'react'
 import { useAuthContext } from '../hooks/useAuthContext.js'
 import InputField from '../components/InputField.js'
+import { useSend } from '../hooks/useSend.js'
+import { useAccount } from '../hooks/useAccount.js'
 
 const Account = () => {
-    const [password, setPassword] = useState('')
-    const [isDeleting, setIsDeleting] = useState(false)
     const { user } = useAuthContext()
+    const { modifyUserState } = useAccount()
+    const { modifyUser } = useSend()
+
+    const [ userData, setUserData] = useState({
+        username: user.username,
+        profilePic: user.profilePic ? user.profilePic : "https://cdn.pixabay.com/photo/2021/06/07/13/45/user-6318003_960_720.png",
+        bio: user.bio ? user.bio : "I'm a new player!"
+    })
     const [error, setError] = useState("")
     const [errorList, setErrorList] = useState([])
 
-    console.log(user)
-
-    const handleChangePassword = () => {
-        console.log('change passwoerd')
-    }
-
-    const handleDeleteAccount = () => {
-        console.log('delete account')
+    const handleUpdateUser = async () => {
+        console.log(user)
+        modifyUserState(await modifyUser(user._id, userData))
     }
 
     const handleTextChange = (e) => {
-        console.log(e.target.value)
+        setUserData({...userData, [e.target.name]:e.target.value})
     }
 
     return (
-        <div className="upload-container">
-            <div className="upload-form">
-                <h1 className='upload-heading'>Account Page</h1>
+        <div className="profile-container">
+            <div className="profile-form">
                 <div className='column_center'>
-                    <img className='profile-pic' src={user.profilePic ? user.profilePic : "https://cdn.pixabay.com/photo/2021/06/07/13/45/user-6318003_960_720.png"} ></img>
+                    <img className='profile-pic' src={userData.profilePic} ></img>
                 </div>
-                <InputField label={"text"} text="Change Username:" name="categoryName" defaultValue={user.username} onChange={handleTextChange} error={error} errorList={errorList}/>
-                <InputField label={"text"} text="Profile Picture URL:" name="categoryName" defaultValue={user.profilePic} onChange={handleTextChange} error={error} errorList={errorList}/>
-                <InputField label={"text"} text="Bio:" name="categoryName" defaultValue={"I'm a new player!"} onChange={handleTextChange} error={error} errorList={errorList}/>
+                <InputField label={"text"} text="Change Username:" name="username" defaultValue={userData.username} onChange={handleTextChange} error={error} errorList={errorList}/>
+                <InputField label={"text"} text="Profile Picture URL:" name="profilePic" defaultValue={userData.profilePic} onChange={handleTextChange} error={error} errorList={errorList}/>
+                <InputField label={"text"} text="Bio:" name="bio" defaultValue={userData.bio} onChange={handleTextChange} error={error} errorList={errorList}/>
 
                 <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                     <div>
                         <Link to="/profile">    
-                            {/* <button className="account-set-pic-btn" onClick={handleChangePassword}>
+                            <button className="account-set-pic-btn" onClick={handleUpdateUser}>
                                 Save Changes
-                            </button>   */}
-                            <button className="account-delete-account-btn" onClick={handleChangePassword}>
+                            </button>  
+                            <button className="account-delete-account-btn">
                                 Cancel
                             </button>    
                         </Link>                    

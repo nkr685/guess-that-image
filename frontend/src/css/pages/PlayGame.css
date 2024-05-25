@@ -1,0 +1,28 @@
+
+
+.game-info {
+    width: 96dvw;
+    margin-left: 2dvw;
+    display: flex;
+    flex-direction: row;
+}
+
+.game-title, .game-author, .game-description {
+    margin-right: 50px;
+}
+
+.game-board {
+    height: 90dvh;
+}
+
+.game-title {
+    font-size: 50px;
+}
+
+.game-author {
+    font-size: 25px;
+}
+
+.game-description {
+    font-size: 40px;
+}

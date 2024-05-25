@@ -61,5 +61,20 @@ export const useAccount = () => {
         dispatch({type: "LOGOUT"})
     }
 
-    return { login, logout, signup, isLoading, error}
+    const modifyUserState = (user) => {
+        localStorage.setItem('user', JSON.stringify(user))
+        dispatch({type: 'UPDATE_USER', payload: user})
+    }
+
+    const deleteAccount = async (user) => {
+        const response = await fetch(`/api/Users/delete/${user._id}`, {
+            method: 'PATCH',
+            headers: {'Content-Type': 'application/json'}
+        })
+        dispatch({type: 'LOGOUT', payload: user})
+        localStorage.removeItem('user')
+        return await response.json()
+    }
+
+    return { login, logout, signup, modifyUserState, deleteAccount, isLoading, error}
 }

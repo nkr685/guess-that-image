@@ -4,11 +4,13 @@ const {
     loginUser,
     signUpUser,
     getUser,
-    deleteUser
+    deleteUser,
+    updateUser,
+    getUsers
 } = require('../controllers/userController.js')
 
 const router = express.Router()
-
+ 
 // login
 router.post('/login', loginUser)
 
@@ -17,6 +19,10 @@ router.post('/signup', signUpUser)
 
 router.get('/:id', getUser)
 
-router.delete('/delete/:id', deleteUser)
+router.get('/', getUsers)
+
+router.patch('/delete/:id', deleteUser)
+
+router.patch('/:id', updateUser)
 
 module.exports = router

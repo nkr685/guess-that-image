@@ -1,0 +1,18 @@
+.stats-row {
+    display: flex;
+    margin-left: 2dvw;
+    justify-content: space-between;
+    width: 96dvw;
+}
+
+.stats-quiz, .stats-score, .stats-correct {
+    font-size: 40px;
+}
+
+.stats-score, .stats-correct {
+    width: 50%;
+}
+
+.stats-correct {
+    text-align: right;
+}

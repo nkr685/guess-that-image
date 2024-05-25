@@ -1,16 +1,23 @@
-import { useState, useEffect, useContext } from 'react';
+import { useState, useEffect, useContext, cloneElement } from 'react';
 import { GameContext } from '../context/GameContext';
-import Board from '../games/gameMode1';
 import { useAuthContext } from '../hooks/useAuthContext';
 import { useGet } from '../hooks/useGet';
 import { useSend } from '../hooks/useSend';
 import { useParams, useLocation } from 'react-router-dom'
-import Rating from '../components/Rating';
+import StateButton from '../gameComponents/StateButton';
+import Timer from '../gameComponents/Timer';
+import ScoreBoard from '../gameComponents/ScoreBoard';
+import ImageDisplay from '../gameComponents/ImageDisplay';
+import InputBox from '../gameComponents/InputBox';
+import Rating from '../gameComponents/Rating';
+import Popup from '../gameComponents/Popup';
+import "../css/pages/PlayGame.css"
+import StackedImageDisplay from '../gameComponents/StackedImageDisplay';
 
 const PlayGame = () => {
     // hooks
     const { user } = useAuthContext()
-    const { getAllImages, getQuiz, getLeaderboard, getUser } = useGet()
+    const { getAllImages, getQuiz, getRandomQuiz, getLeaderboard, getUser } = useGet()
     const { updateLeaderboard, updateQuiz } = useSend()
 
     // global vars
@@ -22,13 +29,44 @@ const PlayGame = () => {
     const [imageUrls, setImageUrls] = useState(null)
     const [firstPlay, setFirstPlay] = useState(false)
     const [author, setAuthor] = useState(null)
+    const [tempImageUrls, setTempImageUrls] = useState(imageUrls)
+    const [gameActive, setGameState] = useState(false)
+    const [imageUrl, setImageUrl] = useState("")
+    const [imageName, setImageName] = useState("")
+    const [score, setScore] = useState(0)
+    const [correct, setCorrect] = useState(0)
+    const [incorrect, setIncorrect] = useState(0)
+    const [hintCount, setHintCount] = useState(0)
+
+
+    // constants
+    const height = window.innerHeight*.6
+    const width = height*1.75
+    const placeholderImageUrl = "https://upload.wikimedia.org/wikipedia/commons/2/25/Icon-round-Question_mark.jpg"
+    const placeholderImageName = "Placeholder"
+    var reward = 300;
+    var penalty = 100;
+    var hintLimit = 3;
+    var startTime = 30
+
+    if (Object.prototype.hasOwnProperty.call(quiz, "params")) {
+        reward = parseInt(quiz.params.reward, 10)
+        penalty = parseInt(quiz.params.penalty, 10)
+        hintLimit = parseInt(quiz.params.hintLimit, 10)
+        startTime = parseInt(quiz.params.startTime, 10)
+    }
+
 
 
     useEffect(() => {
         const fetchQuiz = async() => {
             if (quizID) {
+                console.log(quizID)
                 const quizJson = await getQuiz(quizID)
                 setQuiz(quizJson)
+            } else {
+                const quizJson = await getRandomQuiz(quizID)
+                setQuiz(quizJson[0])
             }
         }
         fetchQuiz()
@@ -40,7 +78,6 @@ const PlayGame = () => {
             setAuthor(authorJson)
         }
         if (quiz.author) {
-            console.log(quiz)
             fetchAuthor(quiz.author)
         }
     }, [quiz])
@@ -62,7 +99,7 @@ const PlayGame = () => {
             const submitScore = async () => {
                 const leaderboard = await getLeaderboard(quiz.leaderboardID)
                 if (leaderboard) {
-                    const entry = {username: user.username, score}
+                    const entry = {_id: user._id, username: user.username, score, deleted: user.deleted}
                     const existingUserIndex = leaderboard.scores.findIndex((score) => score.username === user.username) // finds previous user entry if exists
                     if (existingUserIndex === -1 || entry.score > leaderboard.scores[existingUserIndex].score) { // runs only if user entry doesnt exist or cur is higher than prev
                         const scores = [...leaderboard.scores]
@@ -93,33 +130,123 @@ const PlayGame = () => {
         }
     }
 
+
+    // updates every time new game starts
+    useEffect(() => { 
+        NextImage()
+        if(gameActive) {
+            if (!firstPlay) {
+                setFirstPlay(true)
+            }
+            setScore(0)
+            setCorrect(0)
+            setIncorrect(0)
+        } else {
+            handleSubmitScore(score)
+        }
+    }, [gameActive])
+
+    // gets next image from imageUrls
+    const NextImage = () => { 
+        if (gameActive) {
+            const randomIndex = Math.floor(Math.random() * tempImageUrls.length);
+            const image = tempImageUrls.splice(randomIndex, 1)[0]
+            if (image) {
+            setImageUrl(image.imageUrl)
+            setImageName(image.imageName)                
+            } else {
+                handleGameState(false)
+            }
+        }
+        else {
+            setImageUrl(placeholderImageUrl)
+            setImageName(placeholderImageName)
+        }
+
+    }
+
+    // starts/stops game from StateButton press or Timer end
+    const handleGameState = (state) => {
+        setGameState(state)
+        setTempImageUrls(imageUrls.slice()) //  
+        setHintCount(0)
+    }
+
+    // handles guess on InputBox component
+    const handleGuessCheck = (guess) => {
+        if (imageName.toLowerCase().indexOf(guess.toLowerCase()) !== -1 && guess.length >= 3) {
+            setScore(score+reward)
+            setCorrect(correct+1)
+            NextImage()
+        }
+        else {
+            setScore(score-penalty)
+            setIncorrect(incorrect+1)
+        }
+    }
+
+    // handles skipping on InputBox component
+    const handleSkipImage = () => {
+        NextImage()
+        setScore(score-penalty)
+        setIncorrect(incorrect+1)
+        setHintCount(0)
+    }
+
+    
+    // zooming image 
+    const handleHint = () => {
+        setHintCount(hintCount+1)
+    };
+
     // returns loading screen until database loaded
     if (!quiz._id) {
         return (
-            <div className="App">
+            <div>
                 <header className="Loading-header">
                 Invalid Game ID 
                 </header>
             </div>
             )
-    } else if (!imageUrls || imageUrls.length === 0 || !author) { // needs time to grab data from database
+    } else if (!quiz || !imageUrls || imageUrls.length === 0 || !author) { // needs time to grab data from database
         return (
-        <div className="App">
-            <header className="Loading-header">
-            Loading Game
-            </header>
-        </div>
+            <div>
+                <header className="Loading-header">
+                Loading Game
+                </header>
+            </div>
         )
     } else 
-    
     return (
-        <header className="App-header">
-            <label>Created by: {author.username}</label>
-            <button onClick={()=>{alert("Link Copied!"); navigator.clipboard.writeText("http://localhost:3000"+pathname)}}>Share!</button>
-            <label>{quiz.description}</label>
-            {/* <Rating userRating={user ? quiz.ratings[user._id] : 0} submitRating={handleSubmitRating}/> */}
-            <Board quiz={quiz} quizName={quiz.quizName} imageUrls={imageUrls} submitScore={handleSubmitScore} firstPlay={firstPlay} setFirstPlay={setFirstPlay}/>
-        </header>
+        <div>
+            {/* <button onClick={()=>{alert("Link Copied!"); navigator.clipboard.writeText("http://localhost:3000"+pathname)}}>Share!</button> */}
+            {/* <Popup></Popup> */}
+            {/* <Rating user={user} ratings={quiz.ratings} userRating={user ? quiz.ratings[user._id] : 0} submitRating={handleSubmitRating}/> */}
+            <div style={{display: "flex",justifyContent: "space-between", alignItems: "center", marginRight: "2dvw"}}>
+                <div className='game-info'>
+                    <label className='game-title'>
+                        {`Guess that: ${ quiz.quizName.charAt(quiz.quizName.length - 1) === 's' ? quiz.quizName.slice(0, -1): quiz.quizName}`}
+                    </label>
+                    <div style={{display: 'flex', flexDirection:"column", textAlign: "left"}}>
+                        <label className='game-description'>{quiz.description}</label>     
+                        <label className='game-author'>Created by: {author.username}</label>                 
+                    </div>
+                </div>      
+                <StateButton gameActive={gameActive} setGameState={handleGameState}/>
+            </div>
+            <ScoreBoard gameActive={gameActive} score={score} correct={correct} incorrect={incorrect} firstPlay={firstPlay}/>
+            <Timer gameActive={gameActive} setGameState={handleGameState} startTime={startTime}/>
+            <div style={{display: "flex", justifyContent: "center"}}>
+                {(quiz.gameMode === "pokemon") ?
+                    <StackedImageDisplay backgroundImageUrl = {"https://images3.alphacoders.com/677/677583.png"} gameActive={gameActive} imageName={imageName} imageUrl={(gameActive) ? imageUrl : ""} height={height} width={width} count={hintCount} limit={hintLimit}/>
+                    :
+                    <ImageDisplay gameActive={gameActive} imageName={imageName} imageUrl={imageUrl} height={height} width={width} count={hintCount} limit={hintLimit}/>
+                }                
+            </div>
+
+            <InputBox gameActive={gameActive} checkGuess={handleGuessCheck} skipImage={handleSkipImage} count={hintCount} limit={hintLimit} handleHint={handleHint}/>    
+        </div>
+
     )
 }
 

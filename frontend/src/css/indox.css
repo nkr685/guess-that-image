@@ -1,0 +1,160 @@
+
+
+/* BOARD COMPONENTS */
+
+
+/* PAGES */
+
+
+
+/*  PROGRESS BAR */
+
+
+
+
+/* CARD  */
+
+
+
+
+
+/* SIGNUP / LOGIN */
+
+/* LEADERBOARD */
+
+
+
+/* UPLOAD */
+
+
+/* .upload-file-button-container button,  .upload-file-button-container label{
+display: flex;
+} */
+
+
+/* ACCOUNT */
+
+
+
+
+/* RATING */
+
+.star-rating {
+    font-size: 24px;
+}
+
+.star {
+    cursor: pointer;
+    color: gray;
+}
+
+.filled {
+    color: gold;
+}
+
+
+/* OTHER */
+
+
+
+.entry-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+.carousel {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 40vh;
+    }
+
+.carousel {
+    position: relative;
+    margin: 0 auto; /* Center the carousel horizontally */
+    overflow: hidden;
+    border: 1px solid #f0f0f0;
+    margin: 0; 
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .carousel img {
+    display: block;
+    width: 100%;
+    height: auto;
+    z-index: 1;
+  }
+  
+  .carousel button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .carousel button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  
+  .carousel button:first-child {
+    left: 0;
+  }
+  
+  .carousel button:last-child {
+    right: 0;
+  }
+
+  .carousel-image-container {
+    position: relative;
+    display: inline-block;
+    z-index: 0;
+}
+
+  .carousel-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 20%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 2;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .carousel-overlay-items {
+    margin-right: 20px;
+    color: white;
+  }
+
+  .popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+  }
+  
+  .popup-content {
+    background-color: rgb(29, 29, 29);
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    z-index: 11;
+  }

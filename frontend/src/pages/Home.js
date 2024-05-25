@@ -2,6 +2,7 @@ import { useState, useEffect, useContext } from 'react';
 import Card from '../components/Card';
 import { GameContext } from '../context/GameContext';
 import { useGet } from '../hooks/useGet';
+import "../css/pages/Home.css"
 
 const Home = () => {
     // // global vars
@@ -57,18 +58,20 @@ const Home = () => {
     }
 
     return (
-        <div className='home'>
-        {categories.map((category, idx1) => (
-            <div key={idx1}>
-            <h2 style={{fontSize: 30}}>{category.categoryName}</h2>
-            <div className="card-container">
-                {category.quizIDs.map((quizID, idx2) => (
-                <Card key={idx2} title={quizzes[quizID].quizName} thumbnail={quizzes[quizID].thumbnailUrl} linkTo={`/game/${quizID}`} onClick={()=> handleCardClick(quizzes[quizID])}/>
-                ))}
-            </div>
-            </div>
-        ))}
+        <div className='home-rows'>
+            {categories.map((category, idx1) => (
+                <div key={idx1} className='home-card-row-container'>
+                    <h2 style={{fontSize: 30, marginBottom: 10}} >{category.categoryName}</h2>
+                    <div className="home-card-row">
+                        {category.quizIDs.map((quizID, idx2) => (
+                        <Card key={idx2} title={quizzes[quizID].quizName} thumbnail={quizzes[quizID].thumbnailUrl} linkTo={`/game/${quizID}`} onClick={()=> handleCardClick(quizzes[quizID])}/>
+                        ))}
+                    </div>
+                </div>
+            ))}
         </div>
+
+
     );
 }
 

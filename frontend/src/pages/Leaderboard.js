@@ -1,6 +1,9 @@
 import React, { useContext, useState, useEffect } from 'react';
 import { useGet } from '../hooks/useGet';
 import { GameContext } from '../context/GameContext';
+import { Link } from 'react-router-dom'
+import "../css/pages/Leaderboard.css"
+
 
 const Leaderboard = () => {
     // global vars
@@ -24,9 +27,10 @@ const Leaderboard = () => {
         }
         const fetchLeaderboards = async()=> {
             const json = await getAllLeaderboards()
-            console.log(json)
             setLeaderboards(json)
-            
+            if(json) {
+                setLeaderboard(json[0])
+            }
         }
         fetchLeaderboards()
     }, [])    
@@ -34,7 +38,6 @@ const Leaderboard = () => {
 
     // returns loading screen until database loaded
     if (!leaderboards) {
-        console.log(leaderboards)
         return (
             <div className="Loading-header">
                 <header >
@@ -49,17 +52,20 @@ const Leaderboard = () => {
         setLeaderboard(leaderboards[index])
     }
     return (
-        <div className='Leaderboard'>
+        <div className='leaderboard'>
             <div>
-                <select className="category-select" defaultValue={quiz.leaderboardID ? quiz.leaderboardID : -1} onChange={handleSelectChange}>
-                    {!quiz.leaderboardID && (<option key={-1} >Select Quiz</option>)}
+                {/* <select className="category-select" defaultValue={quiz.leaderboardID ? quiz.leaderboardID : -1} onChange={handleSelectChange}>
+                    <option key='1'>Scores</option>
+                    <option key='2'>Users</option>
+                </select>     */}
+                <select className="leaderboard-select" defaultValue={quiz.leaderboardID ? quiz.leaderboardID : leaderboard._id} onChange={handleSelectChange}>
                     {leaderboards.map((_leaderboard, index) => (
                         <option key={_leaderboard._id} value={_leaderboard._id}>{_leaderboard.quizName}</option>
                     ))}
                 </select>    
             </div>        
             <div>
-                <table className="Leaderboard-table">
+                <table className="leaderboard-table">
                     <thead>
                         <tr>
                             <th>Rank</th>
@@ -75,7 +81,14 @@ const Leaderboard = () => {
                                     .map((entry, index) => (
                                         <tr key={index}>
                                             <td>{index + 1}</td>
-                                            <td>{entry.username}</td>
+                                            <td>
+                                                {entry.username}
+                                                {/* {entry.username &&
+                                                <Link className="entry-link" to={`/profile/${entry._id}`}>
+                                                    {entry.username}
+                                                </Link>                                                           
+                                                } */}
+                                            </td>
                                             <td>{entry.score}</td>
                                         </tr>
                                     ))

@@ -1,0 +1,95 @@
+.leaderboard {
+    text-align: center;
+}
+    
+.leaderboard-select {
+    padding: 5px;
+    margin-top: 10px;
+    font-size: 30px;
+}
+    
+.leaderboard-table {
+    margin: auto;
+    width: 80%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+    
+.leaderboard th,
+.leaderboard td {
+    padding: 15px; 
+    border: 1px solid #ddd;
+    text-align: center;
+    position: relative;
+    font-size: 24px; 
+}
+    
+.leaderboard th {
+    background-color: #333;
+    color: white;
+    font-size: 32px;
+}
+    
+.leaderboard tbody tr:nth-child(even) {
+    background-color: #555555; 
+}
+    
+.leaderboard tbody tr:nth-child(odd) {
+    background-color: #444444;
+}
+    
+.leaderboard tbody tr:nth-child(1) td:first-child::before {
+    content: attr(data-rank);
+    display: block;
+    width: 40px;
+    height: 40px; 
+    border-radius: 50%;
+    line-height: 40px; 
+    background-color: #ffd700;
+    color: #333;
+    font-weight: bold;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2; 
+    }
+    
+.leaderboard tbody tr:nth-child(2) td:first-child::before {
+    content: attr(data-rank);
+    display: block;
+    width: 40px;
+    height: 40px; 
+    border-radius: 50%;
+    line-height: 40px;
+    background-color: #c0c0c0; 
+    color: #333;
+    font-weight: bold;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    }
+    
+.leaderboard tbody tr:nth-child(3) td:first-child::before {
+    content: attr(data-rank);
+    display: block;
+    width: 40px;
+    height: 40px; 
+    border-radius: 50%;
+    line-height: 40px; 
+    background-color: #cd7f32; 
+    color: #333;
+    font-weight: bold;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2; 
+}
+    
+.leaderboard tbody td {
+    position: relative;
+    z-index: 1; 
+}        

@@ -1,8 +1,9 @@
 import { useState} from "react";
+import "../css/gameComponents/InputBox.css"
 
 const InputBox = (props) => {
     // properties
-    const { checkGuess, skipImage, gameActive} = props
+    const { checkGuess, skipImage, gameActive, count, limit, handleHint} = props
 
     // local vars
     const [input, setInput] = useState('');
@@ -21,9 +22,10 @@ const InputBox = (props) => {
     }
 
     return (
-        <form onSubmit={handleCheckGuess}>
-            <input className="input-box" type="text" value={input} required onChange={(e) => setInput(e.target.value)} disabled={!gameActive}/>
-            <input className="guess-button" type="submit" value=" GUESS " disabled={!gameActive}/> 
+        <form className="inputs-container" onSubmit={handleCheckGuess}>
+            <input className="input-box" type="text" placeholder="Enter Guess" value={input} required onChange={(e) => setInput(e.target.value)} disabled={!gameActive}/>
+            <input className="guess-button" type="submit" value="SUBMIT" disabled={!gameActive}/> 
+            <button className="hint-button" onClick={handleHint} disabled={!gameActive}>{(count < limit) ? `HINT ${count}/${limit}`: `HINT ${limit}/${limit}` }</button>
             <button className="skip-button" disabled={!gameActive} onClick={() => handleSkipImage()}>SKIP</button>
         </form>
 

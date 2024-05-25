@@ -1,0 +1,12 @@
+.game-stack-image-container {
+    overflow: hidden; 
+    background-color: #ffffff;
+}
+
+.game-stack-background {
+    z-index: 0; 
+  }
+  
+.game-stack-overlay {
+    z-index: 2;
+} 

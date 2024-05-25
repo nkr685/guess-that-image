@@ -7,6 +7,10 @@ const quizSchema = new Schema({
         type: String,
         required: true
     },
+    gameMode: {
+        type: String,
+        required: true
+    },
     thumbnailUrl: {
         type: String,
         required: true

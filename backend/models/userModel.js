@@ -67,6 +67,11 @@ const UserSchema = new Schema({
     friends: {
         type: Array,
         required: false
+    },
+    deleted: {
+        type: Boolean,
+        required: true,
+        default: false
     }
 }, {collection: 'Users'})
 
@@ -81,9 +86,9 @@ UserSchema.statics.signup = async function(username, password) { // cant use arr
     // if(!validator.isEmail(username)){ // use if we want email
     //     throw Error("Email is not valid")
     // }
-    if (!validator.isStrongPassword(password)) {
-        throw Error('Password is not strong enough')
-    }
+    // if (!validator.isStrongPassword(password)) {
+    //     throw Error('Password is not strong enough')
+    // }
 
     const exists = await this.findOne({ username }) // use statics to be able to use this
 

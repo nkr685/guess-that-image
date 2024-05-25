@@ -1,12 +1,12 @@
-import React from 'react';
+import "../css/components/InputField.css"
 
 const InputField = ({ label, text, name, onChange, defaultValue, error, errorList }) => {
     return(
         <div style={{display: 'inline'}}>                
-            <label className="upload-label">{text}<span>{error ? " " : ""}</span>
+            <label className="account-label">{text}<span>{error ? " " : ""}</span>
             </label>
             <input
-                className="upload-input"
+                className="account-input"
                 label={label}
                 name={name}
                 onChange={onChange}

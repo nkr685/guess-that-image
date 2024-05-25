@@ -1,0 +1,20 @@
+.inputs-container {
+    display: flex;
+    width: 96dvw;
+    padding: 2dvw;
+    height: 5dvh;
+}
+
+
+
+.input-box, .guess-button, .skip-button, .hint-button {
+    font-size: 36px;
+}
+
+.input-box {
+    width: 70%;
+}
+
+.guess-button, .skip-button, .hint-button {
+    width: 10%;
+}

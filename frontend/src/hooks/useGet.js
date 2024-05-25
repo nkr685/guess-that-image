@@ -1,7 +1,7 @@
 export const useGet = () => {
 
     const getAllCategories = async()=> {
-        const response = await fetch(`api/Categories`)
+        const response = await fetch(`/api/Categories`)
         return await response.json()
     }
 
@@ -14,8 +14,14 @@ export const useGet = () => {
         return await response.json()
     }
 
+    const getRandomQuiz = async()=> {
+        const response = await fetch(`/api/Quizzes/Random`) 
+        return await response.json()
+    }
+
+
     const getAllLeaderboards = async()=> { 
-        const response = await fetch(`api/Leaderboards/`)
+        const response = await fetch(`/api/Leaderboards/`)
         if (response.ok) {
             return await response.json()
         }
@@ -43,7 +49,15 @@ export const useGet = () => {
         })
         return await response.json()
     }
+ 
+    const getUsers = async (userIDs) => {
+        const response = await fetch(`/api/Users/${userIDs.join(',')}`, {
+            method: 'GET',
+            headers: { 'Content-Type': 'application/json' }
+        })
+        return await response.json()
+    }
 
-    return { getAllCategories, getAllQuizzes, getQuiz, getAllLeaderboards, getLeaderboard, getAllImages, getUser }
+    return { getAllCategories, getAllQuizzes, getQuiz, getAllLeaderboards, getLeaderboard, getAllImages, getUser, getUsers, getRandomQuiz }
 
 }

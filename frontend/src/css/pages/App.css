@@ -1,0 +1,21 @@
+.Loading-header {
+    background-color: #282c34;
+    min-height: 95vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 50px;
+    color: white;
+}
+
+body {
+    color: white;
+    background-color: #282c34;
+}
+
+.app-pages {
+    /* margin-top: 1dvh; */
+    height: 95dvh;
+    width: 99dvw;
+}

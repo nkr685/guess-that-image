@@ -31,14 +31,23 @@ export const useSend = () => {
     }
 
     // creates all data from Upload page
-    const updateDatabase = async (gameData) => {
+    const createGame = async (gameData) => {
         const response = await fetch(`/api/Upload/`, {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify(gameData)
         })
-        return "test" 
+        return await response.json()
     }
 
-    return { createLeaderboard, updateLeaderboard, updateDatabase, updateQuiz}
+    const modifyUser = async (userID, userData) => {
+        const response = await fetch(`/api/Users/${userID}`, {
+            method: 'PATCH',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify(userData)
+        })
+        return await response.json()
+    }
+
+    return { createLeaderboard, updateLeaderboard, createGame, updateQuiz, modifyUser}
 }

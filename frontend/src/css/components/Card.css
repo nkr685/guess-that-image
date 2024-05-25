@@ -1,0 +1,35 @@
+.card-container {
+    width: 200px; 
+    height: 250px; 
+    overflow: hidden;
+    border: 1px solid #f0f0f0;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: box-shadow 0.1s ease;
+}
+    
+.card-link {
+    display: block;
+    height: 100%;
+    text-decoration: none;
+}
+    
+.card-thumbnail {
+    object-fit: cover;
+    object-position: center;
+}
+    
+.card-title {
+    height: 10%;
+    margin: 0;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    align-items: center;
+}
+
+.card-container:hover {
+    box-shadow: 0 4px 8px 4px rgba(255, 255, 255, 0.6);
+}

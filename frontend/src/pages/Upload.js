@@ -3,11 +3,12 @@ import { useGet } from '../hooks/useGet';
 import { useSend } from '../hooks/useSend';
 import { useAuthContext } from '../hooks/useAuthContext'
 import InputField from '../components/InputField'
+import "../css/pages/Upload.css"
 
 const Upload = () => {
     // hooks
     const { getAllCategories } = useGet()
-    const { updateDatabase } = useSend()
+    const { createGame } = useSend()
 
     // global vars
     const { user } = useAuthContext()
@@ -44,7 +45,6 @@ const Upload = () => {
             const json = await getAllCategories()
             if (json) {
                 setCategories(json)
-                console.log(json)
             } 
         }
         fetchCategories()
@@ -118,9 +118,9 @@ const Upload = () => {
             setStatusLabel(" Success!")
             const categoryData = categories.find(category => category.categoryName === uploadData.categoryName);
             if (categoryData) {
-                const response = await updateDatabase({...uploadData, params:paramData, categoryID: categoryData["_id"], quizIDs: categoryData['quizIDs']})
+                const response = await createGame({...uploadData, params:paramData, categoryID: categoryData["_id"], quizIDs: categoryData['quizIDs']})
             } else {
-                const response = await updateDatabase({...uploadData, params:paramData})
+                const response = await createGame({...uploadData, params:paramData})
             }
         } else {
             setError(true)
