@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/guess-that-image/static/css/main.34b0e4d2.css",
-    "main.js": "/guess-that-image/static/js/main.b70915ff.js",
+    "main.js": "/guess-that-image/static/js/main.ccb9a146.js",
     "index.html": "/guess-that-image/index.html",
     "main.34b0e4d2.css.map": "/guess-that-image/static/css/main.34b0e4d2.css.map",
-    "main.b70915ff.js.map": "/guess-that-image/static/js/main.b70915ff.js.map"
+    "main.ccb9a146.js.map": "/guess-that-image/static/js/main.ccb9a146.js.map"
   },
   "entrypoints": [
     "static/css/main.34b0e4d2.css",
-    "static/js/main.b70915ff.js"
+    "static/js/main.ccb9a146.js"
   ]
 }
